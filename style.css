@@ -1,0 +1,66 @@
+#titulo{    
+    padding-block: 70px;
+    padding-left: 30%;
+    padding-right: 30%;    
+    text-align: center;
+    background-color: #32213A;
+}
+
+#tituloLim{
+    padding-block: 100px;
+    margin: 0 auto;    
+    text-align: center;
+    background-color: #714674;    
+}
+
+h1{    
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+}
+
+h2, h3, h4, h5, h6{
+    font-family: 'Bebas Neue', cursive;
+}
+
+#textoOffCanvas{
+    font-size: 14px;
+    font-weight: bold;
+}
+#definicao{
+    margin: 0 auto;
+}
+#divs{
+    margin-top: 20px;
+}
+
+#floatingbutton{
+    text-align: center;
+    background-color: #32213A;
+    position:fixed;
+    bottom:5%;
+    right:5%;
+    width:60px;
+	height:60px;   
+    border-radius: 50%;    
+    box-shadow: 2px 2px 3px #999;
+}
+
+#imgOffCanvas{
+    text-align: center;
+}
+
+.container{
+    padding: 20px;
+}
+
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #e9ecef;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+    border-left-color: #FAAE7B;
+}
+
+

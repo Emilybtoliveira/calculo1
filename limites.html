@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limites</title>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    </head>
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+     </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <a class="navbar-brand" onclick="window.location.href='calculo1.html';">Página Inicial</a>
+              <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="#continuidade">Continuidade</a></li>
+              <li class="nav-item"><a class="nav-link" href="#laterais">Laterais</a></li>
+              <li class="nav-item"><a class="nav-link" href="#infinitos">Infinitos</a></li>
+              <li class="nav-item"><a class="nav-link" href="#propriedades">Propriedades</a></li>
+              <li class="nav-item"><a class="nav-link" href="#encontrando">Encontrando limites</a></li>
+              <li class="nav-item"><a class="nav-link" href="#precisa">Def. Precisa</a></li>
+              <li class="nav-item"><a class="nav-link" href="#calcInfinito">Cálculos infinitos</a></li>
+            </ul>  
+        </div>
+    </nav>
+
+    <div id="tituloLim">           
+        <h1 id="lim">LIMITES</h1>
+    </div>
+
+    <div class="container">        
+        <div class="card" id="definicao">
+            <div class="card-header" style="background-color: #9F6976; color: white;">
+            Definição
+            </div>
+            <div class="card-body">
+                <p class="card-title" style="font-weight: bold;">F(x) é definido quando está próximo a um número $a$.</p>              
+                <p class="card-text">Isso significa que f é definido em algum intervalo aberto que contenha $a$, exceto no próprio $a$.
+                    $$\lim_{x \to a} f(x) = L $$
+                </p>
+            </div>
+        </div>
+        <div id="divs">
+            <h3 id="continuidade">CONTINUIDADE</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center" >
+                        <div class="col">
+                            <p>Uma função $f$ é continua se atender aos requisitos:</p>
+                            <ol>
+                                <li>$ f(a) $ estar definido</li>
+                                <li>$\lim f(x) $ existir</li>
+                                <li>$ \lim f(x) = f(a) $ </li>                            
+                            </ol>
+                        </div>
+                        <div class="col">
+                            <img src="sources/continuidade.png" style="width: 60%;">
+                        </div>
+                    </div>
+                    <hr>
+                    <b>Funções contínuas podem ter seu limite encontrado substituindo $a$ na função.</b>
+            </div>
+        </div>
+        <div class="card card text-center" id="divs">    
+            <div class="card-body">
+                <h4>FUNÇÕES DESCONTINUAS</h4>
+                <p> Se $f$ está definida próximo de $a$ ($f$ está definida em um intervalo aberto contendo $a$, 
+                    exceto possivelmente em $a$), então $f$ é descontínua em $a$. </p>  
+                <img src="sources/descontinuidade.png" style="width: 25%; margin: 0 auto;">                  
+            </div>                  
+        </div>
+        <!--EXEMPLOS-->
+        <div class="bd-callout">       
+            <h4>Resolvendo questões de continuidade</h4>            
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" id="bd-callout">
+                    Continuidade em um intervalo
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <b>Mostre que a função $f(x)  = 1 - \sqrt{1-x^2} $ é contínua no intervalo [1, -1]. </b>
+                        $$
+                            \lim_{x \to a} f(x) = \lim_{x \to a} (1 - \sqrt{1-x^2})
+                            \\ = 1 - \lim_{x \to a} \sqrt{1-x^2}
+                            \\ = 1 - \sqrt{1-a^2}
+                            \\ = f(a)
+                        $$
+                        $f$ é contínua em $a$ se $ -1 < a < 1 $:
+                        $$
+                        \lim_{x \to {-1^+}} f(-1) = 1
+                        \\ \lim_{x \to 1^-} f(1) = 1
+                        $$
+                        Logo, $f$ é continua à direita em -1 e continua à esquerda em 1, sendo continua no intervalo.
+                    </div>
+                </div>
+                </div>
+            </div>             
+        </div>
+
+        <div id="divs">
+            <h3 id="laterais">LIMITES LATERAIS</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center" >
+                        <div class="col">
+                            $$\lim_{x \to {a^-}} f(x) = L $$
+                            $a^+\rightarrow$ o limite à direita de f(x) quando x tende a $a$ é L
+                        </div>
+                        <div class="col">
+                            $$\lim_{x \to {a^+}} f(x) = L $$
+                            $a^- \rightarrow$ o limite à esquerda de f(x) quando x tende a $a$ é L
+                        </div>
+                    </div>
+                    <hr>
+                    <b>Para uma função ser considerada contínua e para o limite existir:</b>
+                    $\lim_{x \to {a^-}} f(x) = L $ e $\lim_{x \to {a^+}} f(x) = L $
+            </div>
+        </div>
+
+        <div id="divs">
+            <h3 id="infinitos">LIMITES INFINITOS</h3>
+            <div class="card">
+                <div class="card-body">
+                    <p>Os valores de $f(x)$ se tornam arbitrariamente grandes tornando $x$ suficientemente próximo de $a$, mas não igual a $a$.
+                            $$\lim_{x \to a} f(x) = \infty  \\ \lim_{x \to a} f(x) = -{\infty} $$
+                    </p>
+                    <img src="sources/infinitos.png" class="card-img-bottom"> 
+                    <div class="bd-callout" style="border-left-color: #CEE26B"><b>Assíntota Vertical:</b> é a reta x = a de f(x) quando o limite tende ao infinito.</div>
+            
+                </div>
+            </div>
+        </div>
+
+        <div id="divs">
+            <h3 id="propriedades">PROPRIEDADES DOS LIMITES</h3>
+            <ul class="list-group">
+                <li class="list-group-item">$$\lim_{x \to {a^-}}[ f(x) \pm g(x)] = \lim_{x \to {a^-}} f(x) \pm \lim_{x \to {a^-}} g(x) $$</li>
+                <li class="list-group-item">$$\lim_{x \to {a^-}}[cf(x)] = c\lim_{x \to {a^-}} f(x) $$</li>
+                <li class="list-group-item">$$\lim_{x \to {a^-}}[f(x)*/g(x)] = \lim_{x \to {a^-}} f(x) */ \lim_{x \to {a^-}} g(x) $$</li>
+                <li class="list-group-item">$$\lim_{x \to {a^-}}[f(x)]^n = [\lim_{x \to {a^-}} f(x)]^n $$</li>
+                <li class="list-group-item ">$$\lim_{x \to {a^-}} c = c         \lim_{x \to {a^-}} x = a $$</li>
+                <li class="list-group-item ">$$\lim_{x \to {a^-}} x^n = a^n (n \in Z+) $$ </li>
+                <li class="list-group-item ">$$\lim_{x \to {a^-}} \sqrt[n]{x} = \sqrt[n]{a} (n \in Z+)$$ </li>
+                <li class="list-group-item ">$$\lim_{x \to {a^-}} \sqrt[n]{f(x)} = \sqrt[n]{\lim_{x \to {a^-}} f(x)} $$ </li>
+              </ul>
+        </div>
+        
+        <div id="divs">
+            <h3 id="encontrando">ENCONTRANDO LIMITES</h3>
+            <div class="bd-callout" style="border-left-color: #9F6976;">
+                <h4>MÉTODO</h4>
+                <p>
+                    <ol>
+                        <li>
+                            Caso, por substituição direta de a, a função seja anulada, é preciso manipular algebricamente
+                            <ul>
+                                <li> Pode-se usar fatoração, produtos notáveis, propriedades de potenciação, racionalização</li>
+                                <li>Quando a função não for mais anulável, faz-se a substitutição direta de a.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Não sendo anulada:
+                            <ul>
+                                <li>Substituição direta</li>
+                                <li>Propriedades dos limites</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </p> 
+                <h5>EXEMPLOS DE RESOLUÇÃO</h5>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
+                        Exemplo com produtos notáveis
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <h5>$\lim_{h \to 0} \frac{(-5+h)^2 - 25}{h}$</h5>                            
+                            $$
+                                \\ \lim_{h \to 0} \frac{(-5+h)^2 - 25}{h} = \frac{(-5+h)^2 - 5^2}{h}
+                                \\ =\frac{(-5+h+5)(-5+h-5)}{h}
+                                \\ =\frac{h(h-10)}{h}
+                                \\ = h - 10 = 0-10 = 10                               
+                            $$
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="bd-callout">
+                            Exemplo com racionalização
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <h5>$\lim_{t \to 0} \frac{(\sqrt{1+t}) - (\sqrt{1-t})}{t}$</h5>                            
+                                $$
+                                    \\ \lim_{t \to 0} \frac{(\sqrt{1+t}) - (\sqrt{1-t})}{t} =  \frac{(\sqrt{1+t}) - (\sqrt{1-t})(\sqrt{1+t}) + (\sqrt{1-t})}{t((\sqrt{1+t}) + (\sqrt{1-t}))}
+                                    \\ = \frac{(\sqrt{1+t})^2 - (\sqrt{1-t})^2}{t((\sqrt{1+t}) + (\sqrt{1-t}))}
+                                    \\ =\frac{1+t-1+t}{t((\sqrt{1+t}) + (\sqrt{1-t}))}
+                                    \\ = \frac{2t}{t((\sqrt{1+t}) + (\sqrt{1-t}))}   
+                                    \\ = \frac{2}{(\sqrt{1+t}) + (\sqrt{1-t})}   
+                                    \\ = \frac{2}{(\sqrt{1+0}) + (\sqrt{1-0})}   
+                                    \\ = \frac{2}{1+1} = 1                  
+                                $$
+                            </div>
+                        </div>
+                    </div>
+                </div>         
+            </div>
+        </div>
+
+        <div id="divs">
+            <h3 id="precisa">DEFINIÇÃO PRECISA</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            O limite de $f(x)$ quando x tende a $a$ é L <i>se para todo numero $\epsilon$ houver um numero $\delta$ tal que</i>
+                            $$ 0 <|x-a|<\delta \rightarrow  |f(x)-L|<\epsilon $$  
+                        </div>
+                        <div class="col">                             
+                            <img src="sources/defnicao.png" style="width: 75%;">
+                        </div>
+                    </div>                                                                      
+                </div>
+                <hr>
+                <div class="row text-center">
+                    <div class="col"> $a- \delta < x < a $ então $|f(x)-L|<\epsilon$ <p>À esquerda</p> </div>
+                    <div class="col">$a < x < a+ \delta $ então $|f(x)-L|<\epsilon$ <p>À direita</p></div>
+                    <div class="col">$0 < |x-a| < \delta$ então $f(x)> M $ <p>Limites Infinitos</p></div>
+                </div>
+            </div>
+        </div>
+        <!--EXEMPLOS-->
+        <div class="bd-callout">       
+            <h5>Encontrando $\delta$ e $\epsilon$</h5>  
+            <ol>
+                <li>Estabelecer $0 <|x-a|<\delta$ e $|f(x)-L|<\epsilon$, substituindo os valores correspondentes</li>
+                <li>Manipular $\epsilon$ até encontrar uma proporção pra ele</li>
+                <li>$\delta$ sera igual a proporção de $\epsilon$ encontrada.</li>
+            </ol>          
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" id="bd-callout">
+                        Exemplo 1
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <b>Prove que $ \lim_{x \to 10} (3- \frac{4}{5}x) = -5 $  </b>
+                        <p>Se $0<|x-10|\delta$ então $|(3- \frac{4}{5}x)+5|< \epsilon $</p>
+                        <p>Se $0<|x-10|\delta$ então $|\frac{-4x+40}{5}|< \epsilon $</p>
+                        <p>Se $0<|x-10|\delta$ então $\frac{4}{5}|x-10|< \epsilon $</p>
+                        <p>Se $0<|x-10|\delta$ então $|x-10|< \frac{5\epsilon}{4} $</p>
+                        <p>Logo, $\delta = \frac{5\epsilon}{4}$</p>
+                    </div>
+                </div>
+            </div>
+        </div>             
+    </div>
+
+    <div id="divs">
+        <h3 id="calcInfinito">Cálculos de limites no infinito e infinitos</h3>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">LIMITES NO INFINITO</h4>
+                <div class="row">
+                    <div class="col">
+                        <p>Os valores de $f(x)$ se aproximam de L e tornam x cada vez maior(positiva ou negativamente). </p>
+                        <p style="text-align: center;">$\lim_{x \to \infty} f(x) = L$ e $\lim_{x \to -\infty} f(x) = L$</p>
+                    
+                        <div class="bd-callout" style="border-left-color: #CEE26B"><b>Assíntota Horizontal:</b> é a reta y = L de f(x) quando x tende ao infinito</div>
+                    </div>
+                    <div class="col"> <img src="sources/infitnito.png"  style="width: 70%;"></div>
+                </div>
+               <h5>Calcular limites no infinito</h5>
+               <h6>MÉTODO</h6>
+                    <ol>
+                        <li>Divide-se o numerador e o denominador pela maior potencia de x que ocorre no denominador.</li>
+                        <b>OBS: $x^n$ se $n \in R$</b>
+                        <li>Ao final da simplificação:</li>
+                        <ul>
+                            <li><b>Caso 1:</b>Se sobrar x em algum denominador dentre as frações formadas, estas são substituidas por 0 (porque quanto mais x se aproximar do infinito mais próximo de 0 a fração fica).</li>
+                            <li><b>Caso 2:</b>Se sobrar x no numerador, realiza a substituição direta por $\infty$ e o resultado é $\infty$.</li>
+                            <li><b>Caso 3:</b>Se sobrar x no denominador da fração principal da função, estas são substituidas por $\infty$ e o resultado é 0 (porque $\frac{numero}{infinito}$ é um número muito pequeno).</li>
+                        </ul>     
+                        <li>O valor encontrado é a Assíntota Horizontal</li>
+                        <b>OBS: sempre fazer para $x \rightarrow -\infty$ e para $x \rightarrow +\infty$</b>
+                    </ol>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" id="bd-callout">
+                            Caso 1
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <h5>$\lim_{x \to \infty} \frac{3x-2}{2x+1} $</h5>
+                            $$
+                                \lim_{x \to \infty} \frac{3x-2}{2x+1} = \lim_{x \to \infty} \frac{\frac{3x}{x} - \frac{2}{x}}{\frac{2x}{x} + \frac{1}{x}}
+                                \\ = lim_{x \to \infty} \frac{3 - \frac{2}{x}}{2 + \frac{1}{x}}
+                                \\ = lim_{x \to \infty} \frac{3-0}{2+0} = \frac{3}{2}
+                            $$
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" id="bd-callout">
+                                Caso 2
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <h5>$\lim_{x \to -\infty} \frac{2x^2+4x-5}{3x+8} $</h5>
+                                $$
+                                     \lim_{x \to -\infty} \frac{2x^2+4x-5}{3x+8} = \lim_{x \to -\infty} \frac{2x+4 - \frac{5}{x}}{3 + \frac{8}{x}}
+                                     \\ = lim_{x \to -\infty} \frac{-\infty +4-0}{3+0} = -\infty
+                                $$
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix" id="bd-callout">
+                                Caso 3
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <h5>$\lim_{x \to \infty} (\sqrt{x^2+1}-x) $</h5>
+                                $$
+                                    \lim_{x \to \infty} (\sqrt{x^2+1}-x) = \lim_{x \to \infty} (\sqrt{x^2+1}-x) \frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}+x}
+                                    \\ = \lim_{x \to \infty} \frac{(x^2 + 1) - x^2}{\sqrt{x^2+1} +x}
+                                    \\ = \lim_{x \to \infty} \frac{1}{\sqrt{x^2+1} + x}
+                                    \\ = \lim_{x \to \infty} \frac{1}{\sqrt{\infty+1} + \infty}
+                                    \\ = \lim_{x \to \infty} \frac{1}{\infty} = 0
+                                $$
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>      
+        </div>
+
+    </div>
+
+    <div class="card" id="divs">
+        <div class="card-body">
+            <h4 class="card-title">LIMITES INFINITOS</h4> 
+                Assíntotas verticais ocorrem quando o denominador da função é 0, porque 
+                quanto mais proximo de 0 o valor de x, maior o valor de f(x).               
+            <p style="text-align: center;"> $\lim_{x \to a} f(x) = \infty$  $\lim_{x \to a} f(x) = -{\infty} $ </p>       
+            
+           <h5>Calcular limites infinitos</h5>
+           <h6>MÉTODO</h6>
+                <ol>
+                    <li>Deve-se encontrar o(s) valor(es) que anulam o denominador da fração.</li>
+                    <li>Cada um dos valores encontrados serão as assíntotas verticais da função.</li>
+                    <b>OBS: Sempre fazer para $x \rightarrow a^-$ e $x \rightarrow a^+$</b>
+                </ol>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSeven">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven" id="bd-callout">
+                        Exemplo 1
+                    </button>
+                </h2>
+                <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>Encontre as assintotas verticais de $f(x)= \frac{x^2 + 1}{2x^2 - 3x -2}$</p>
+                        I - $$ f(x) = 2x^2 - 3x - 2 
+                                \\(2x+1)(x-2) = 0  
+                                \\ 2x+1 = 0
+                                \\x = \frac{-1}{2}
+                            $$
+                        II - $$ f(x) = 2x^2 - 3x - 2 
+                                \\(2x+1)(x-2) = 0  
+                                \\x-2 = 0
+                                \\x = 2
+                            $$
+                        Dessa forma, existem duas possibilidades de assíntotas verticais que podem ser encontradas em:
+                        <p>I- $x =\frac{-1}{2}$ </p>
+                            $$ \lim_{x \to \frac{-1}{2}^+} \frac{x^2+1}{2x^2-3x-2} 
+                                = \lim_{x \to \frac{-1}{2}^+} \frac{x^2+1}{(2x+1)(x-2)} 
+                                = \lim_{x \to \frac{-1}{2}^+} \frac{(\frac{-1}{2})^2 + 1}{(2(\frac{-1}{2})+1)(\frac{-1}{2} - 2)} 
+                                \\ \lim_{x \to \frac{-1}{2}^+} \frac{\frac{1}{4}+1}{0 \frac{-5}{2}} 
+                                = \lim_{x \to \frac{-1}{2}^+} \frac{\frac{3}{4}}{0} = \infty
+                            
+                            $$
+                        <p>A sacada é: para $x^-$ temos valores de x, que se aproximam de $\frac{-1}{2}$, mas são menores que ele,
+                        tornando o denominador pequeno, porém negativo, resultando em um $-\infty$. O mesmo ocorre para $x^+$, no entanto os valores
+                        de x cada vez mais proximos de 0 vêm do lado positivo, resultando em um $+\infty$</p>
+
+                        <p>Portanto para essa assíntota vertical:</p>
+                        $$ \lim_{x \to \frac{-1}{2}^+} \frac{x^2+1}{2x^2-3x-2} = +\infty
+                            \\ \lim_{x \to \frac{-1}{2}^-} \frac{x^2+1}{2x^2-3x-2} = -\infty
+                        $$
+
+                        <p>II- $x =2$ </p>
+                        <p>Exatamente o mesmo processo de I</p>
+                    </div>
+                </div>          
+                
+            </div>
+        </div>
+
+    </div>
+    
+    <!--Floating Button-->
+    <div id="floatingbutton" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></div>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvaslabel">
+    <div class="offcanvas-header">
+    <h4 class="offcanvas-title" id="offcanvaslabel" style="color: coral;">HELP<hr></h4>        
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>                    
+    </div>
+    <div class="offcanvas-body">
+        <h5>Propriedades de potência</h5>
+            <p>
+                $$
+                    a^n.a^m = a^{m+n}                     
+                $$
+
+                $$                    
+                    \frac{a^n}{a^m} = a^{m-n}  
+                $$
+
+                $$                    
+                    {(a^n)}^m = a^{nm}  
+                $$
+
+                $$                    
+                    \frac{a^n}{b^n} = {ab}^n
+                $$
+
+                $$                    
+                    a^{-n} = \frac{1}{a^n}
+                $$                
+            </p>
+            <hr>
+        
+        <h5>Produtos Notáveis</h5>
+            <p>
+            $$                    
+                (a+b)^2 = a^2+2ab+b^2
+            $$
+            $$                    
+                (a-b)^2 = a^-+2ab+b^2
+            $$
+            $$                    
+                (a+b)^3 = a^3+3{a^2}b+3a{b^2}+b^3
+            $$
+            $$                    
+                (a-b)^3 = a^3-3{a^2}b+3a{b^2}-b^3
+            $$
+            $$                    
+                (a+b)(a-b) = a^2 - b^2
+            $$
+            $$                    
+                a^3+b^3 = (a+b)(a^2-ab+b^2)
+            $$
+            $$                    
+                a^3-b^3 = (a-b)(a^2+ab+b^2)
+            $$
+            </p>
+            <hr>
+        <h5>Funções Trigonométricas</h5>
+            <div id="imgOffCanvas">
+                <img src="sources/senx.png" style="width: 90%; height: 90%;">                    
+                <img src="sources/cosx.png" style="width: 90%; height: 90%;">                    
+                <img src="sources/tgx.png" style="width: 70%; height: 70%;">                    
+            </div>
+            <p>
+                $$                    
+                    tan x = \frac{sen x}{cos x}
+                $$
+                $$                    
+                    sec x = \frac{1}{cos x}
+                $$
+                $$                    
+                    csc x = \frac{1}{sen x}
+                $$
+                $$                    
+                    cot x = \frac{cos x}{sen x}
+                $$
+                $$                    
+                    sen^2 x + cos^2 x = 1
+                $$
+                $$                    
+                    tan^2 x + 1 = sec^2 x
+                $$
+                $$                    
+                    cot^2 x + 1 = cos^2 x
+                $$
+            </p>
+            <hr>
+        <h5>Logaritmo</h5>
+            <p id="textoOffCanvas">Comum → log de base 10 </p>
+            <p>$$  log 10 (x) = log (x) $$ </p>
+            <p id="textoOffCanvas">Natural → log de base <i>e</i></p> 
+            <p>$$  ln e(x) = ln (x) $$ </p>
+            <h6 style="color: coral;">Propriedades</h6>
+            <p>$$  log a (1) = 0 $$
+                $$  log a (a) = 1 $$
+                $$ log a (a^m) = m  $$
+                $$ a^{log a (n)} = n  $$
+                $$ log a (b.c) = log a (b) + log a (c) $$
+                $$ log a (\frac{b}{c}) = log a (b) - log a (c) $$
+                $$ log a (b^c) = c.log a (b)  $$
+                $$ log a (c{\sqrt{b}}) = \frac{1}{c}. log a (b) $$
+                
+            </p>
+        </div>
+    </div>
+
+    
+</body>
+</html>
