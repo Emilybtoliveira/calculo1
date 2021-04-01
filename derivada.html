@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Definição Derivada</title>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <!--fontes-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    </head>
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+    <body>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <a class="navbar-brand" onclick="window.location.href='calculo1.html';">Página Inicial</a>
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Inicio</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#derivada">Derivada definição</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#resolução">Resolução</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#notação">Notação</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#ordens">Ordem Superior</a></li>                  
+                </ul>  
+            </div>
+        </nav>
+    
+        <div id="titulo" style="background-color: #CC8B79;">           
+            <h1>Definição de derivada</h1>
+        </div>
+        <div class="container">
+            <div id="divs">
+                <h3>RETA TANGENTE</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <p>A reta tangente é a reta passando por um ponto P de uma curva $y=f(x)$ com a inclinação $m$ </p>
+                        <div class="row">
+                            <div class="col">
+                                <img src="sources/tangente.png" alt="">
+                            </div>
+                            <div class="col">
+                                Tal que $h$ é o $\Delta x$, ou seja, a taxa de variação de $x$. Quando $x$ tende a $a$, $h$ tende a 0(pois o $\Delta$ vai diminuindo)
+                                e assim, temos o valor mais aproximado da reta tangente(que é quando $x = a$).
+                                $$
+                                    m = \lim_{x \to a} \frac{f(x) - f(a)}{x-a}
+                                    \\ m = \lim_{x \to a} \frac{f(a+h) - f(a)}{h}
+                                $$
+                            </div>
+                        </div>   
+                        <hr>
+                        <b>OBS: </b>Lembrando que $m$ é $\frac{\Delta{y}}{\Delta{x}}$, ou seja, a variação do valor de y e a variação do valor de x.
+                        Por isso, esse tipo de cálculo é chamado de taxa de variação instantânea, visto que pode ser reescrito como:
+                        $$
+                            \lim_{\Delta{x} \to 0} \frac{\Delta{y}}{\Delta{x}} = lim_{x2 \to x1} \frac{f(x2) - f(x1)}{x2-x1}
+                        $$
+                </div>
+            </div>
+
+            <div id="divs">
+                <h3 id="derivada">DERIVADA: DEFINIÇÃO</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <p>A derivada é, portanto a reta tangente de um ponto de uma função f(x), podendo ser encontrada através
+                            da fórmula da reta tangente:
+                            $$
+                                f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x-a}
+                                \\ f'(a) = \lim_{x \to a} \frac{f(a+h) - f(a)}{h}
+                            $$
+                        </p>
+                        <div class="bd-callout">       
+                            A reta tangente a $y = f(x)$ em $(a, f(a))$ é a reta que passa em $(a, f(a))$, cuja inclinação é igual a
+                            $f'(a)$, a derivada de $f$ em $a$.
+                        </div>
+                        <hr>
+                        Se $f$ for diferenciável em $a$, então $f$ é contínua em $a$.
+                        <p>&rarr;<b>Funções descontinuas</b> não podem ser derivadas.</p>
+                    </div>  
+                </div>
+
+                <div id="divs">
+                    <h3 id="resolução">Resolução pela definição</h3>
+                    <div class="bd-callout" style="border-left-color: #09A6F3;">
+                        <h4>MÉTODO</h4>
+                        <p>
+                            <ol>
+                                <li>A fórmula da derivada é substituída pela função $f(x)$ fornecida nos valores de $f(a+h)$ e $f(a)$ </li>
+                                <li>Desenvolve-se a equação até encontrar uma versão simplificada.</li>
+                                <li>O resultado é a a inclinação da reta ($m$)</li>
+                                <li>Caso a questão dê os pontos da reta, deve-se calcular o $m$, com $h$ tendendo a 0, e a 
+                                    equação da reta tangente que é dada por: $y - y1 = m(x-x1)$</li>
+                            </ol>
+                        </p> 
+                        <h5>EXEMPLOS DE RESOLUÇÃO</h5>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
+                                Exemplo sem pontos
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Encontre a derivada em um numero a $y = x^2-8x+9$</p>                            
+                                    $$
+                                        \\ f'(a) = \lim_{h \to 0} \frac{f(a+h)- f(a)}{h} 
+                                        \\ = \lim_{h \to 0} \frac{[(a+h)^2 -8(a+h)+ 9] - [a^2-8a+9]}{h} 
+                                        \\ = \lim_{h \to 0} \frac{a^2+2ah+h^2-8a-8h+9-a^2+8a-9}{h}  
+                                        \\ = \lim_{h \to 0} \frac{2ah+h^2-8}{h}    
+                                        \\ = \lim_{h \to 0} (2a+h-8) 
+                                        \\f'(a)= 2a-8 
+                                    $$
+                                </div>
+                            </div>
+        
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" id="bd-callout">
+                                    Exemplo com pontos
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Encontre uma equação da reta tangente à parábola $y = x^2-8x+9$ no ponto (3, -6)</p>                           
+                                        <p>Pela questao anterior:</p>
+                                        $$
+                                            f(x)= f(a) = x^2-8x+9
+                                            \\f'(x)= f'(a)=  2a-8              
+                                        $$
+                                        Portanto a inclinação da reta tangente em (3,-6) é:
+                                        $$                                            
+                                           m = f'(x) = 2a-8  
+                                           \\m = f'(3) = 2*3-8 = -2            
+                                        $$
+                                        E a equação da reta:
+                                        $$                                            
+                                            y - y1 = m(x-x1)
+                                            \\y - (-6) = -2(x-3)  
+                                            \\y = -2x         
+                                        $$
+                                    </div>
+                                </div>
+                            </div>
+                        </div>         
+                    </div>
+                </div>
+            </div> 
+
+            <h3>Notação de Leibniz</h3>
+            <div class="bd-callout" id="notação" style="border-left-color: #EDE342;"> 
+                $$
+                    f'(x) = y' = \frac{dy}{dx} = \frac{d}{dx}= Df(x)
+                $$
+                Tradicionalmente as notações acima podem ser interpretadas como $y$ em função de $x$ ($y = f(x)$);
+                ou seja, <b>x como variável independente e y variável dependente.</b>
+            </div>
+
+            <h3 id="ordens">DERIVADAS DE ORDEM SUPERIOR</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Derivadas de uma função derivada. Representadas por
+                            $$
+                                (f')' = \frac{d}{dx}(\frac{dy}{dx})
+                            $$
+                        </p>                        
+                    </div>  
+                    <div class="bd-callout" style="border-left-color: #09A6F3;">
+                        <h4>MÉTODO  DE RESOLUÇÃO</h4>                        
+                        <ol>
+                            <li>Encontra-se a primeira derivada de $f(x)$.</li>
+                            <li>O resultado de f'(x) é a nova função inicial de f(x).</li>
+                            <li>Usa-se essa função para encontrar uma nova derivada.</li>
+                            <li>O resultado é $f'(f'(x))$.</li>
+                            <li>Repete-se quantas derivadas forem solicitadas.</li>
+                        </ol>                         
+
+                        <h5>EXEMPLOS</h5>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" id="bd-callout">
+                                        Segunda Derivada
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse hide" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p>Se $f(x) = x^3-x$, encontre $f'(x)$</p>                            
+                                        $$
+                                            f'(x) = \lim_{h \to 0} \frac{f(x+h)- f(x)}{h} 
+                                            \\ = \lim_{h \to 0} \frac{[(x+h)^3 -(x+h)] - [x^3-x]}{h} 
+                                            \\ = \lim_{h \to 0} \frac{x^3+3x^2h+3xh^2+h^3-x-h-x^3+x}{h}  
+                                            \\ = \lim_{h \to 0} \frac{3x^2h+3xh^2+h^3-h}{h}    
+                                            \\ = \lim_{h \to 0} (3x^2+3xh+h^2-1) 
+                                            \\f'(x)= 3x^2-1 
+                                        $$
+                                        Assim, a primeira derivada é $f'(x)= 3x^2-1 $. E a segunda:
+                                        $$
+                                            f''(x) = \lim_{h \to 0} \frac{f'(x+h)- f'(x)}{h}
+                                            \\ =\lim_{h \to 0} \frac{[3(x+h)^2 - 1] - [3x^2-1]}{h}
+                                            \\ =\lim_{h \to 0} \frac{3x^2+6xh+3h^2-1-3x^2+1}{h}
+                                            \\ =\lim_{h \to 0} 6x+3h 
+                                            \\f''(x)= 6x
+                                        $$
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Floating Button-->
+        <div id="floatingbutton" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvaslabel">
+        <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvaslabel" style="color: coral;">HELP<hr></h4>        
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>                    
+        </div>
+        <div class="offcanvas-body">
+            <h5>Propriedades de potência</h5>
+                <p>
+                    $$
+                        a^n.a^m = a^{m+n}                     
+                    $$
+
+                    $$                    
+                        \frac{a^n}{a^m} = a^{m-n}  
+                    $$
+
+                    $$                    
+                        {(a^n)}^m = a^{nm}  
+                    $$
+
+                    $$                    
+                        \frac{a^n}{b^n} = {ab}^n
+                    $$
+
+                    $$                    
+                        a^{-n} = \frac{1}{a^n}
+                    $$                
+                </p>
+                <hr>
+            
+            <h5>Produtos Notáveis</h5>
+                <p>
+                $$                    
+                    (a+b)^2 = a^2+2ab+b^2
+                $$
+                $$                    
+                    (a-b)^2 = a^-+2ab+b^2
+                $$
+                $$                    
+                    (a+b)^3 = a^3+3{a^2}b+3a{b^2}+b^3
+                $$
+                $$                    
+                    (a-b)^3 = a^3-3{a^2}b+3a{b^2}-b^3
+                $$
+                $$                    
+                    (a+b)(a-b) = a^2 - b^2
+                $$
+                $$                    
+                    a^3+b^3 = (a+b)(a^2-ab+b^2)
+                $$
+                $$                    
+                    a^3-b^3 = (a-b)(a^2+ab+b^2)
+                $$
+                </p>
+                <hr>
+            <h5>Funções Trigonométricas</h5>
+                <div id="imgOffCanvas">
+                    <img src="sources/senx.png" style="width: 90%; height: 90%;">                    
+                    <img src="sources/cosx.png" style="width: 90%; height: 90%;">                    
+                    <img src="sources/tgx.png" style="width: 70%; height: 70%;">                    
+                </div>
+                <p>
+                    $$                    
+                        tan x = \frac{sen x}{cos x}
+                    $$
+                    $$                    
+                        sec x = \frac{1}{cos x}
+                    $$
+                    $$                    
+                        csc x = \frac{1}{sen x}
+                    $$
+                    $$                    
+                        cot x = \frac{cos x}{sen x}
+                    $$
+                    $$                    
+                        sen^2 x + cos^2 x = 1
+                    $$
+                    $$                    
+                        tan^2 x + 1 = sec^2 x
+                    $$
+                    $$                    
+                        cot^2 x + 1 = cos^2 x
+                    $$
+                </p>
+                <hr>
+            <h5>Logaritmo</h5>
+                <p id="textoOffCanvas">Comum → log de base 10 </p>
+                <p>$$  log 10 (x) = log (x) $$ </p>
+                <p id="textoOffCanvas">Natural → log de base <i>e</i></p> 
+                <p>$$  ln e(x) = ln (x) $$ </p>
+                <h6 style="color: coral;">Propriedades</h6>
+                <p>$$  log a (1) = 0 $$
+                    $$  log a (a) = 1 $$
+                    $$ log a (a^m) = m  $$
+                    $$ a^{log a (n)} = n  $$
+                    $$ log a (b.c) = log a (b) + log a (c) $$
+                    $$ log a (\frac{b}{c}) = log a (b) - log a (c) $$
+                    $$ log a (b^c) = c.log a (b)  $$
+                    $$ log a (c{\sqrt{b}}) = \frac{1}{c}. log a (b) $$
+                    
+                </p>
+            </div>
+        </div>
+        
+    </body>
+</html>

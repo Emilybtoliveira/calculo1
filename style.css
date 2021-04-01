@@ -1,4 +1,4 @@
-#titulo{    
+#tituloCalc{    
     padding-block: 70px;
     padding-left: 30%;
     padding-right: 30%;    
@@ -6,11 +6,10 @@
     background-color: #32213A;
 }
 
-#tituloLim{
+#titulo{
     padding-block: 100px;
     margin: 0 auto;    
-    text-align: center;
-    background-color: #714674;    
+    text-align: center;    
 }
 
 h1{    

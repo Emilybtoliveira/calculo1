@@ -13,19 +13,23 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    </head>
         <!--MathJax-->
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
     <body>
-        <script src="script.js"></script>
-        <div id="titulo">           
+
+        <div id="tituloCalc">           
             <h1>ESCOLHA O ASSUNTO</h1>
         </div> 
         <div class="container">                  
             <div class="container" id="buttongroup">
                 <div class="btn-group-vertical col-12 border rounded-3" id="buttons">
                     <button type="button" class="btn btn-light" onclick="window.location.href='limites.html';">Limites</button>
-                    <button type="button" class="btn btn-light" id="butao">Definição de derivada</button>
+                    <button type="button" class="btn btn-light" onclick="window.location.href='derivada.html';">Definição de derivada</button>
                     <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" 
-                        aria-expanded="false" id="butao">Regras de derivação</button>
+                        aria-expanded="false">Regras de derivação</button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Básicas</a></li>
                         <li><a class="dropdown-item" href="#">Cadeia</a></li>
