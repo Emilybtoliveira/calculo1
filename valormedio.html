@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Valor médio</title>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <!--fontes-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    </head>
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+    <body>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <a class="navbar-brand" onclick="window.location.href='calculo1.html';">Página Inicial</a>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Inicio</a></li>     
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#vmedio">Teor. Valor Médio</a></li>            
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#resolucaomedio">Resoluções V. Médio</a></li>            
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#teste">Teste C/D</a></li>            
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#primDerivada">Teste 1ª Derivada</a></li> 
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#segDerivada">Teste 2ª Derivada</a></li> 
+                </ul>  
+            </div>
+        </nav>
+
+        <div id="titulo" style="background-color: #82C26E;">           
+            <h1>Valor Médio</h1>
+        </div>
+        <div class="container">
+            <div id="divs">
+                <h3>Teorema de Rolle</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <p>Seja $f$ uma função que satisfaça as seguintes hipóteses:
+                            <ol>
+                                <li>$f$ é contínua no intervalo fechado [a, b].</li>
+                                <li>$f$ é contínua no intervalo aberto (a, b).</li>
+                                <li>$f (a) = f (b)$</li>
+                            </ol>
+                            Então, existe um número c em (a, b) tal que f '(c) = 0.
+                        </p>
+
+                        <img src="resources/rolle.png" class="card-img-bottom" style="width: 80%;">                       
+                    </div>  
+                </div>
+            </div>
+            <div id="divs">
+                <h3 id="vmedio">Teorema do Valor Médio</h3>
+                <div class="card  border-info">
+                    <div class="card-body">
+                        <p>Seja $f$ uma função que satisfaça as seguintes hipóteses: 
+                            <ol>
+                                <li>$f$ é contínua no intervalo fechado [a, b].</li>
+                                <li>$f$ é contínua no intervalo aberto (a, b).</li>
+                            </ol>
+                            Então, existe um número c em (a, b) tal que 
+                            $$f'(c) = \frac{f(b)-f(a)}{b-a}
+                            \\ f'(c)(b-a)= f(b)-f(a)
+                            $$
+                        </p>                      
+                    </div>  
+                </div>                
+            </div>
+            <div id="divs">                
+                <div class="bd-callout" style="border-left-color: #FB76C1;">
+                    <h3 id="resolucaomedio">Resolvendo questões com o valor médio</h3>                    
+                    <h5>EXEMPLO DE RESOLUÇÃO</h5>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
+                            Exemplo com intervalo
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><b>$f(x) = x^3 - x$, para o intervalo [0,2]</b></p> 
+                                <p>Uma vez que $f$ é polinomial, então ela é continua e derivável em todo x e, portanto,continua em[0,2]
+                                    e derivável em (0,2). Assim:</p>                       
+                                    $$ f(2) - f(0) = f'(c)(2-0) $$ 
+                                Para $f(2) = 6$, $f(0) = 0$ e $f'(x) = 3x^2-1$:
+                                $$ 6 = 3(c^2 - 1)2 
+                                \\ 6 = 6c^2 - 2
+                                \\ c^2 = \frac{4}{6} 
+                                \\c = \pm\sqrt{\frac{4}{3}} = \pm\frac{2}{\sqrt{3}}
+                                $$                                  
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
+                            Exemplo com desigualdades
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><b>Suponha que $f(0) = -3$ e $f'(x)\leq5$ para todos os valores de $x$. Quão grande $f(2)$ pode ser?</b></p> 
+                                <p>Se $f$ é derivável, então é contínua e podemos aplicar o Teorema do Valor Médio ao intervalo [0,2], logo:</p>                       
+                                    $$ f(2)-f(0) = f'(c)(2-0)
+                                    \\f(2) = f(0)-2f'(c)
+                                    \\f(2) = -3+2f'(c)  
+                                    $$ 
+                                Foi dado que $f'(x) \leq 5$, logo, $f'(c)\leq 5$, então podemos tornar a equação parecida com a anterior subtraindo 3 e multiplicando 2:
+                                $$f(2) = -3+2f'(c) \leq -3+(2*5)
+                                \\f(2) = -3+2f'(c) \leq 7
+                                $$
+                                O maior valor possivel para f(2) é 7.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div id="divs">          
+                <h3 id="teste">Teste Crescente/Descrescente</h3>      
+                <div class="bd-callout" style="border-left-color: #EDE342;"> 
+                    <h4 id="teste">Encontrando pontos crescentes e descrescentes</h4> 
+                    No teste crescente e descrescente, procuramos valores onde a curva cresce ou decresce. De modo que:
+                    <p>(a) Se $f'(x)>0$ em um intervalo, então $f$ é crescente nele.</p> 
+                    <p>(b) Se $f'(x)< 0$ em um intervalo, então $f$ é decrescente nele.</p>
+                    <h5>MÉTODO</h5>
+                    <ol>
+                        <li>Divide-se a derivada em seus fatores em uma tabela.</li>
+                        <li>Encontram-se os números criticos da derivada.</li>
+                        <p><b>OBS:</b> <u>Numeros criticos</u> - pontos de $f(x)$ para os quais $f'$ é igual a 0 ou não existe(divisão por 0).</p>
+                        <li>Determina-se, na tabela, qual sinal cada um dos fatores assume na extremidade de cada intervalo, e por fim, o sinal da derivada</li>
+                        <li>Sabendo o sinal da derivada, é possível determinar se eh crescente ou decrescente</li>
+                    </ol> 
+                    <div class="bd-callout" style="border-left-color: #CEE26B;">  
+                         <h5>EXEMPLO DE RESOLUÇÃO</h5>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" id="bd-callout">
+                                        ENCONTRANDO C/D
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse hide" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <p><b>Encontre onde $f(x) = 3x^4 - 4x^3 - 12x^2 +5 $ é crescente e onde é descrescente</b></p>                         
+                                        $$ f'(x) = 12x^3-12x^2-24x
+                                        \\ f'(x) = 12x(x-2)(x+1) 
+                                        $$ 
+                                        Queremos, agora, saber os sinais de cada um dos fatores da derivada ($12x, x-2, x-1$). Para isso, utilizaremos os numeros
+                                        criticos da derivada (-1, 0 e 2) e colocaremos tudo numa tabela:
+                                        <p><img src="resources/tabela1.png"></p>                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <h4 id="primDerivada">Encontrando máximos e minimos locais</h4> 
+                    No <b>teste da primeira derivada</b>, analisamos os valores criticos da função $f$, de modo que
+                    <p>(a) Se o sinal de $f'$ mudar de positivo para negativo em c, então f tem um máximo local em c. </p> 
+                    <p>(b) Se o sinal de $f'$  mudar de negativo para positivo em c, então f tem um mínimo local em c.</p>
+                    <p>(c) Se $f'$ não mudar de sinal em c (isto é, se em ambos os lados de c $f'$ for positiva ou negativa), então $f$ não tem máximo ou mínimo locais em c</p>
+                    <h5> CONTINUANDO O MÉTODO</h5>
+                    <ol>
+                        <li>Analisa-se onde os valores de $f$ são crescente e descrente</li>
+                        <li>A partir daí, calcula-se os valores de máximo e minimo locais a partir dos pontos criticos em $f(x)$</li>                        
+                    </ol> 
+                    <div class="bd-callout" style="border-left-color: #FF5252;">  
+                         <h5>EXEMPLO DE RESOLUÇÃO</h5>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" id="bd-callout">
+                                        ENCONTRANDO MÁXIMOS E MINIMOS
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse hide" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">                                            
+                                        <p><img src="resources/tabela1.png"></p>   
+                                        Analisando a tabela construida, vemos que:
+                                        <p> - De $x <-1$ para $ -1 < x < 0 $ o sinal de   $f'(x)$ muda de negativo para positivo. Logo $f'(-1) = 0$ é um minimo local.</p>
+                                        <p>- De $ -1 < x < 0 $ para $ 0 < x < 2 $ o sinal de  $f'(x)$ muda de positivo para negativo. Logo $f'(0) = 5$ é um máximo local.</p>                  
+                                        <p>- De $ 0 < x < 2 $ para $ x > 2 $ o sinal de  $f'(x)$ muda de negativo para positivo. Logo $f'(2) = -27$ é um minimo local.</p>                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 id="segDerivada">Encontrando a concavidade e pontos de inflexão</h4> 
+                    No <b>teste da segunda derivada</b>, ajuda a determinar os intervalos de concavidade.
+                    <p>(a) Se o gráfico de $f$ estiver acima de todas as suas tangentes no intervalo I, então $f$ é chamada côncava para cima em I. </p> 
+                    <p>(b) Se o gráfico de $f$ estiver abaixo de todas as suas tangentes em I, então $f$ é chamada côncava para baixo em I.</p>
+                    <h5> CONTINUANDO O MÉTODO</h5>
+                    <ol>
+                        <li>Encontra-se $f''$</li>
+                        <li>Calcula-se $f''$ para os pontos criticos de x</li> 
+                        <li>Sabendo $f''(x)$ nos pontos criticos, pode-se definir quando a função passa de um crescente para um descrescente, e portanto, 
+                            a concavidade da curva (e também o valor do minimo/maximo local substituindo em f(x) caso este n tenha sido calculado ainda).</li>
+                        <li>Para descobrir os pontos de inflexao, constroi-se uma tabela com o intervalo contendo os pontos criticos de f"(x), 
+                            os respectivos sinais de $f''(x)$ nesses pontos, e a concavidade da curva</li>
+                            <ol>
+                                <li>Toda vez que a concavidade mudar, calcula-se f(x) para aquele ponto critico de f"(x) e este é um ponto de inflexao.</li>
+                            </ol>
+                    </ol> 
+
+                    <div class="card border-primary card text-center">
+                        <div class="card-body">
+                            Um ponto P na curva $y = f (x)$ é chamado <b>ponto de inflexão</b> se $f$ é contínua no ponto e a curva mudar de côncava para cima 
+                            para côncava para baixo ou vice-versa em P. Para uma $f''$ contínua na proximidade de c:
+                            <p>(a) Se $f'(c) = 0$ e  $f''(c) > 0$, então $f$ tem um mínimo local em c.</p>
+                            <p>(b) Se $f'(c) = 0$ e  $f''(c) < 0$, então $f$ tem um máximo local em c.</p>
+                        </div>
+                      </div>
+
+                    <div class="bd-callout" style="border-left-color: #C481A7;">  
+                         <h5>EXEMPLO DE RESOLUÇÃO</h5>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" id="bd-callout">
+                                ENCONTRANDO A CONCAVIDADE E PONTOS DE INFLEXAO
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse hide" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">                                            
+                                <p>Examine a curva $y = x^4-4x^3$ em relação à concavidade, aos pontos de inflexão e mínimos e máximos locais.</p>   
+                                <p>Calculando primeira e segunda derivada:</p>    
+                                    $$ f'(x) = 4x^3 - 12x^2 = 4x^2(x-3) 
+                                    \\f''(x) = 12x^2 - 24x = 12x(x-2)$$ 
+                                    Para encontrarmos os números críticos, fazemos $f'(x) = 0$ e obtemos $x= 0$ e $x=3$. Para usar o Teste da Segunda Derivada, 
+                                    calculamos $f''$ nesses pontos críticos: 
+                                    $$ f''(0) = 12x(x-2) \rightarrow f''(0) = 0
+                                    \\ f''(3) = 12x(x-2)  \rightarrow f''(3) = 36 > 0
+                                    $$ 
+
+                                <p>- Uma vez que $f'(3)=0$ e $f''(3) > 0$, $f(3)= -27$ é um mínimo local.</p>
+                                <p>- Uma vez que $f''(0) = 0$, o Teste da Segunda Derivada não fornece informações sobre o número crítico 0. </p>
+                                Mas, uma vez que $f'(x) < 0$ para $x < 0 $ e também para $0 < x < 3$, o Teste da Primeira Derivada nos diz que $f$ não tem um máximo ou mínimo local em 0. 
+                                <p>Como $f"(x)=0$ quando $x = 0$ ou 2, dividimos a reta real em intervalos com esses números como extremidades e completamos a seguinte tabela.</p>
+                                
+                                <img src="resources/tabela2.png">
+                                <p>- O ponto (0, 0) é um ponto de inflexão, uma vez que a curva muda de côncava para cima para côncava para baixo aí.</p> 
+                                <p>- Também (2, -16) é um ponto de inflexão, uma vez que é ali que a curva muda de côncava para baixo para côncava para cima.</p>
+                            </div>                            
+                        </div>
+                    </div>                    
+            </div>
+
+        </div>
+
+        <!--Floating Button-->
+        <div id="floatingbutton" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvaslabel">
+        <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvaslabel" style="color: coral;">HELP<hr></h4>        
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>                    
+        </div>
+        <div class="offcanvas-body">
+            <h5>Propriedades de potência</h5>
+                <p>
+                    $$
+                        a^n.a^m = a^{m+n}                     
+                    $$
+
+                    $$                    
+                        \frac{a^n}{a^m} = a^{m-n}  
+                    $$
+
+                    $$                    
+                        {(a^n)}^m = a^{nm}  
+                    $$
+
+                    $$                    
+                        \frac{a^n}{b^n} = {ab}^n
+                    $$
+
+                    $$                    
+                        a^{-n} = \frac{1}{a^n}
+                    $$                
+                </p>
+                <hr>
+            
+            <h5>Produtos Notáveis</h5>
+                <p>
+                $$                    
+                    (a+b)^2 = a^2+2ab+b^2
+                $$
+                $$                    
+                    (a-b)^2 = a^-+2ab+b^2
+                $$
+                $$                    
+                    (a+b)^3 = a^3+3{a^2}b+3a{b^2}+b^3
+                $$
+                $$                    
+                    (a-b)^3 = a^3-3{a^2}b+3a{b^2}-b^3
+                $$
+                $$                    
+                    (a+b)(a-b) = a^2 - b^2
+                $$
+                $$                    
+                    a^3+b^3 = (a+b)(a^2-ab+b^2)
+                $$
+                $$                    
+                    a^3-b^3 = (a-b)(a^2+ab+b^2)
+                $$
+                </p>
+                <hr>
+            <h5>Funções Trigonométricas</h5>
+                <div id="imgOffCanvas">
+                    <img src="resources/senx.png" style="width: 90%; height: 90%;">                    
+                    <img src="resources/cosx.png" style="width: 90%; height: 90%;">                    
+                    <img src="resources/tgx.png" style="width: 70%; height: 70%;">                    
+                </div>
+                <p>
+                    $$                    
+                        tan x = \frac{sen x}{cos x}
+                    $$
+                    $$                    
+                        sec x = \frac{1}{cos x}
+                    $$
+                    $$                    
+                        csc x = \frac{1}{sen x}
+                    $$
+                    $$                    
+                        cot x = \frac{cos x}{sen x}
+                    $$
+                    $$                    
+                        sen^2 x + cos^2 x = 1
+                    $$
+                    $$                    
+                        tan^2 x + 1 = sec^2 x
+                    $$
+                    $$                    
+                        cot^2 x + 1 = cos^2 x
+                    $$
+                </p>
+                <hr>
+            <h5>Logaritmo</h5>
+                <p id="textoOffCanvas">Comum → log de base 10 </p>
+                <p>$$  log 10 (x) = log (x) $$ </p>
+                <p id="textoOffCanvas">Natural → log de base <i>e</i></p> 
+                <p>$$  ln e(x) = ln (x) $$ </p>
+                <h6 style="color: coral;">Propriedades</h6>
+                <p>$$  log a (1) = 0 $$
+                    $$  log a (a) = 1 $$
+                    $$ log a (a^m) = m  $$
+                    $$ a^{log a (n)} = n  $$
+                    $$ log a (b.c) = log a (b) + log a (c) $$
+                    $$ log a (\frac{b}{c}) = log a (b) - log a (c) $$
+                    $$ log a (b^c) = c.log a (b)  $$
+                    $$ log a (c{\sqrt{b}}) = \frac{1}{c}. log a (b) $$
+                    
+                </p>
+            </div>
+        </div>
+
+    </body>
+</html>
