@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Problemas de Otimização</title>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+        <!--fontes-->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    </head>
+        <!--MathJax-->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+        </script>
+        <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    </head>
+    <body>        
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <a class="navbar-brand" onclick="window.location.href='calculo1.html';">Página Inicial</a>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Inicio</a></li>    
+                    
+                </ul>  
+            </div>
+        </nav>
+
+        <div id="titulo" style="background-color: #000000; color: #FFFFFF;">           
+            <h1>Problemas de otimização</h1>
+        </div>
+
+        <div class="container">            
+            <div class="bd-callout" style="border-left-color: #FB76C1;">
+                <p><b>Teste da Primeira Derivada para Valores Extremos Absolutos: </b> sendo c o numero critico de uma função 
+                    contínua $f$ em um certo intervalo:</p>
+                    <p>Se $f'(x) > 0$ para todo $x < c$ e $f'(x) < 0$ para todo $x > c$, então $f(c)$ é o valor máximo absoluto de $f$.</p>
+                    <p>Se $f'(x) < 0$ para todo $x < c$ e $f'(x) > 0$ para todo $x > c$, então $f(c)$ é o valor mínimo absoluto de $f$.</p>
+            </div>
+
+            <h3>Resolvendo questões</h3>
+                <div class="bd-callout" style="border-left-color: rgb(100, 99, 99);"> 
+                    <h4>MÉTODO</h4>      
+                    <ol>
+                        <li>Encontrar uma equação ou mais que se relacione com o problema</li>
+                        <li>Identificar qual a equação principal que poderá dar o minimo/maximo absoluto</li>
+                        <li>Se possivel, utilizar uma das equações para eliminar alguma das variáveis, deixando apenas em função de uma</li>
+                        <li>Deriva-se a equação principal</li>
+                        <li>Encontra-se os valores criticos</li>
+                        <li>Faz-se uma análise do comportamento de f'(x) nesses números para definir o x do valor máx/min</li>
+                        <p><b>OBS:</b> Calculando a segunda derivada ou pelo Teste da Primeira Derivada para Valores Absolutos.</p>
+                        <li>Depois, encontra-se o valor máx/min</li>
+                    </ol>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                        <h4 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
+                               Com intervalos definidos
+                            </button>
+                        </h4>
+                        <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p><b>Um fazendeiro tem 1 200 m de cerca e quer cercar um campo retangular que está na margem de um rio reto. 
+                                Ele não precisa de cerca ao longo do rio. Quais são as dimensões do campo que tem maior área?</b></p>                       
+                                <p> Desejamos maximizar a área A do retângulo. Sejam x e y a profundidade e a largura do retângulo 
+                                (em metros). Então, expressamos A em termos de x e y:</p>
+                                $$A = xy$$
+                                Queremos expressar A como uma função de apenas uma variável; assim, eliminamos $y$ expressando-o em termos de x. 
+                                Para fazermos isso, usamos a informação dada de que o comprimento total da cerca é de 1 200 m. Logo,
+                                $$2x+y = 1200$$
+                                Dessa equação, temos $y = 1.200 - 2x$, resultando assim
+                                $$A = x(1200-2x) = 1200x - 2x^2$$
+                                Observe que $x >= 0$ e  $x <= 600$ (de outra forma resultaria $A < 0 $). Logo, a função que desejamos maximizar é 
+                                $$A(x) = 1200x - 2x^2 (0\leq x \leq600)$$
+                                A derivada é $A'(x) = 1200 - 4x$; logo, para encontrarmos os números críticos, resolvemos a equação
+                                $$1200 - 4x = 0$$
+                                que nos fornece $x = 300$. O valor máximo de A deve ocorrer ou nesse número crítico ou em uma extremidade do intervalo. 
+                                Uma vez que $A(0) = 0$, $A(300) = 180 000$ e $A(600) = 0$, o Método do Intervalo Fechado nos fornece o valor máximo como $A(300) = 180 000$.
+                                <p>Assim, o campo retangular deve ter 300 m de profundidade e 600 m de extensão.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h4 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
+                                    Com sólidos
+                                </button>
+                            </h4>
+                            <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p><b>Uma caixa com uma base quadrada e sem tampa tem volume de 32 000 cm3. Encontre as dimensões da caixa que minimizam a quantidade de material usado.</b></p>                       
+                                    Através dos dados da questão, podemos definir uma fórmula para a quantidade de material necessário para a construção do sólido,
+                                    que nesse caso, é apenas a área da base mais a área das 4 faces:
+                                    $$Ab+4Al = x^2+4(xh)$$
+                                    Além disso, para eliminarmos h da equação utilizaremos a capacidade da caixa solicitada através da fórmula do volume:
+                                    $$V = Ab*h \rightarrow 32000 = x^2h \rightarrow h = \frac{32000}{x^2}$$
+                                    Substituindo h na fórmula inicial:
+                                    $$ x^2+4x(\frac{32000}{x^2})
+                                    \\ = x^2+(\frac{128000}{x})
+                                    \\ f(x) = \frac{x^3+128000}{x}
+                                    $$
+                                    Para encontrarmos o valor mínimo faremos o teste da Primeira Derivada:
+                                    $$ f'(x) = \frac{\frac{d}{dx}(x^3+128000)x - (x^3+128000)\frac{d}{dx}(x)}{x^2}
+                                    \\ = f'(x) = \frac{3x^3 - x^3 - 128000}{x^2} 
+                                    \\ = f'(x) = \frac{2x^3 - 128000}{x^2} 
+                                    $$
+                                    Encontrando o ponto crítico:
+                                    $$\frac{2c^3 - 128000}{c^2} = 0
+                                    \\ 2c^3 = 128000
+                                    \\ c = \sqrt[3]{64000} 
+                                    \\ c = 40
+                                    $$
+                                    Analisando $x = 40$ como intervalo, vemos que $f'(x)$ se torna negativo para valores menores que 40 e se $f'(x)$ se torna
+                                    positivo para valores maiores que 40. Dessa forma, $=40$ é o valor que origina nosso mínimo absoluto, de acordo com o Teste
+                                    da Primeira Derivada para Valores Absolutos, e portanto, nosso x. Para y:
+                                    $$ h = \frac{32000}{x^2}
+                                    \\ h = \frac{32000}{40^2}
+                                    \\ h = 20
+                                    $$
+                                    $x = 40 cm$ e $h = 20cm$ são as menores dimensões.
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
