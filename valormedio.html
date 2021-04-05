@@ -197,66 +197,95 @@
                                 </div>
                             </div>
                         </div>
+                    </div>                   
+                    
+                    <h4 id="segDerivada">Encontrando a concavidade e pontos de inflexão</h4> 
+                    O <b>teste da segunda derivada</b>, ajuda a determinar os intervalos de concavidade e os valores máximo e mínimo(sem tabela).
+                   
+                    <div id="divs">
+                        <div class="card border-warning card">                            
+                            <div class="card-body">
+                                <h5>Teste de Concavidade</h5>
+                                <p>(a) Se $f''(c) > 0$, entao $f$ é concavo para cima</p> 
+                                <p>(b) Se $f''(c) < 0$, entao $f$ é concavo para baixo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divs">
+                        <div class="card border-danger card">
+                            <div class="card-body">
+                                <h5>Teste da Segunda Derivada para valores max/min locais</h5>
+                                Para $f''$ contínua na proximidade de c:
+                                <p>(a) Se $f'(c) = 0$ e  $f''(c) > 0$, então $f$ tem um mínimo local em c.</p>
+                                <p>(b) Se $f'(c) = 0$ e  $f''(c) < 0$, então $f$ tem um máximo local em c.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <h4 id="segDerivada">Encontrando a concavidade e pontos de inflexão</h4> 
-                    No <b>teste da segunda derivada</b>, ajuda a determinar os intervalos de concavidade.
-                    <p>(a) Se $f''(c) > 0$, entao $f$ é concavo para cima</p> 
-                    <p>(b) Se $f''(c) < 0$, entao $f$ é concavo para baixo</p>
-                    <h5> CONTINUANDO O MÉTODO</h5>
-                    <ol>
-                        <li>Encontra-se $f''$</li>
-                        <li>Calcula-se $f''$ para os pontos criticos de x</li> 
-                        <li>Sabendo $f''(x)$ nos pontos criticos, pode-se definir quando a função passa de um crescente para um descrescente, e portanto, 
-                            a concavidade da curva (e também o valor do minimo/maximo local substituindo em f(x) caso este não tenha sido calculado ainda).</li>
-                        <li>Para descobrir os pontos de inflexao, constroi-se uma tabela com o intervalo contendo os pontos criticos de f"(x), 
-                            os respectivos sinais de $f''(x)$ nesses pontos, e a concavidade da curva</li>
+                    <div id="divs">
+                        <div class="card border-success card text-center">
+                            <div class="card-body">
+                                Um ponto P na curva $y = f (x)$ é chamado <b style="color: red;">ponto de inflexão</b> se $f$ é contínua no ponto e a curva mudar de côncava para cima 
+                                para côncava para baixo ou vice-versa em P. 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="divs">
+                        <h5> CONTINUANDO O MÉTODO</h5>
+                        <ol>
+                            <li>Encontra-se $f''$</li>
+                            <li>Encontram-se os pontos críticos de $f''$</li>
+                            <li>Constrói uma tabela usando esses pontos críticos como intervalo, os respectivos sinais de $f′′(x)$ nesses pontos,
+                            e a concavidade de $f$.</li>
                             <ol>
-                                <li>Toda vez que a concavidade mudar, calcula-se f(x) para aquele ponto critico de f"(x) e este é um ponto de inflexao.</li>
+                                <li>Se $f''(c) > 0$, $f$ é côncava para cima.</li>
+                                <li>Se $f''(c) < 0$, $f$ é côncava para baixo.</li>
                             </ol>
-                    </ol> 
+                            <li>Descobre-se os pontos de inflexão dependendo da mudança da concavidade da curva.</li>                            
+                            <li>Caso a questão <b>não</b> tenha pedido os intervalos onde $f$ é Crescente e Descente, somente os valores máx/min, então:</li>
+                            <ol>
+                                <li>Calcula-se as duas primeiras derivadas e os pontos criticos da primeira</li>
+                                <li>Calcula-se os pontos criticos de $f'(x)$ encontrados em $f''(x)$ para o teste da Segunda Derivada</li>
+                                <li>Faz-se a analise da mudança de sinal de $f''(x)$ naquele numero critico:</li>
+                                <p>Se $f'(c)$ foi de 0 para $f''(c)> 0$ é um mínimo; se $f'(c)$ foi de 0 para $f''(c) < 0 $ é um máximo.</p>
+                                <li>Descobrindo os máximos e mínimos, é só partir para a continuação do teste da segunda derivada nos passos 2-4 acima.</li>
+                            </ol>
+                        </ol>
+                    </div>               
 
-                    <div class="card border-primary card text-center">
-                        <div class="card-body">
-                            Um ponto P na curva $y = f (x)$ é chamado <b>ponto de inflexão</b> se $f$ é contínua no ponto e a curva mudar de côncava para cima 
-                            para côncava para baixo ou vice-versa em P. Para uma $f''$ contínua na proximidade de c:
-                            <p>(a) Se $f'(c) = 0$ e  $f''(c) > 0$, então $f$ tem um mínimo local em c.</p>
-                            <p>(b) Se $f'(c) = 0$ e  $f''(c) < 0$, então $f$ tem um máximo local em c.</p>
-                        </div>
-                      </div>
+                <div class="bd-callout" style="border-left-color: #C481A7;">  
+                    <h5>EXEMPLO DE RESOLUÇÃO</h5>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" id="bd-callout">
+                            ENCONTRANDO A CONCAVIDADE E PONTOS DE INFLEXAO
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse hide" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">                                            
+                            <p><b>Examine a curva $y = x^4-4x^3$ em relação à concavidade, aos pontos de inflexão e mínimos e máximos locais.</b></p>   
+                            <p>Calculando primeira e segunda derivada:</p>    
+                                $$ f'(x) = 4x^3 - 12x^2 = 4x^2(x-3) 
+                                \\f''(x) = 12x^2 - 24x = 12x(x-2)$$ 
+                                Para encontrarmos os números críticos, fazemos $f'(x) = 0$ e obtemos $x= 0$ e $x=3$. Para usar o Teste da Segunda Derivada, 
+                                calculamos $f''$ nesses pontos críticos: 
+                                $$ f''(0) = 12x(x-2) \rightarrow f''(0) = 0
+                                \\ f''(3) = 12x(x-2)  \rightarrow f''(3) = 36 > 0
+                                $$ 
 
-                    <div class="bd-callout" style="border-left-color: #C481A7;">  
-                         <h5>EXEMPLO DE RESOLUÇÃO</h5>
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFive">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" id="bd-callout">
-                                ENCONTRANDO A CONCAVIDADE E PONTOS DE INFLEXAO
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse hide" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">                                            
-                                <p><b>Examine a curva $y = x^4-4x^3$ em relação à concavidade, aos pontos de inflexão e mínimos e máximos locais.</b></p>   
-                                <p>Calculando primeira e segunda derivada:</p>    
-                                    $$ f'(x) = 4x^3 - 12x^2 = 4x^2(x-3) 
-                                    \\f''(x) = 12x^2 - 24x = 12x(x-2)$$ 
-                                    Para encontrarmos os números críticos, fazemos $f'(x) = 0$ e obtemos $x= 0$ e $x=3$. Para usar o Teste da Segunda Derivada, 
-                                    calculamos $f''$ nesses pontos críticos: 
-                                    $$ f''(0) = 12x(x-2) \rightarrow f''(0) = 0
-                                    \\ f''(3) = 12x(x-2)  \rightarrow f''(3) = 36 > 0
-                                    $$ 
-
-                                <p>- Uma vez que $f'(3)=0$ e $f''(3) > 0$, $f(3)= -27$ é um mínimo local.</p>
-                                <p>- Uma vez que $f''(0) = 0$, o Teste da Segunda Derivada não fornece informações sobre o número crítico 0. </p>
-                                Mas, uma vez que $f'(x) < 0$ para $x < 0 $ e também para $0 < x < 3$, o Teste da Primeira Derivada nos diz que $f$ não tem um máximo ou mínimo local em 0. 
-                                <p>Como $f"(x)=0$ quando $x = 0$ ou 2, dividimos a reta real em intervalos com esses números como extremidades e completamos a seguinte tabela.</p>
-                                
-                                <img src="resources/tabela2.png">
-                                <p>- O ponto (0, 0) é um ponto de inflexão, uma vez que a curva muda de côncava para cima para côncava para baixo aí.</p> 
-                                <p>- Também (2, -16) é um ponto de inflexão, uma vez que é ali que a curva muda de côncava para baixo para côncava para cima.</p>
-                            </div>                            
-                        </div>
-                    </div>                    
+                            <p>- Uma vez que $f'(3)=0$ e $f''(3) > 0$, $f(3)= -27$ é um mínimo local.</p>
+                            <p>- Uma vez que $f''(0) = 0$, o Teste da Segunda Derivada não fornece informações sobre o número crítico 0. </p>
+                            Mas, uma vez que $f'(x) < 0$ para $x < 0 $ e também para $0 < x < 3$, o Teste da Primeira Derivada nos diz que $f$ não tem um máximo ou mínimo local em 0. 
+                            <p>Como $f"(x)=0$ quando $x = 0$ ou 2, dividimos a reta real em intervalos com esses números como extremidades e completamos a seguinte tabela.</p>
+                            
+                            <img src="resources/tabela2.png">
+                            <p>- O ponto (0, 0) é um ponto de inflexão, uma vez que a curva muda de côncava para cima para côncava para baixo aí.</p> 
+                            <p>- Também (2, -16) é um ponto de inflexão, uma vez que é ali que a curva muda de côncava para baixo para côncava para cima.</p>
+                        </div>                            
+                    </div>
+                </div>                    
             </div>
 
         </div>
