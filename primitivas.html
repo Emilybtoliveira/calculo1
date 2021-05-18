@@ -124,78 +124,149 @@
     </div>
 
 
-    <!--Floating Button-->
-    <div id="floatingbutton" style="background-color: #ff006aa6" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></div>
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvaslabel">
-        <div class="offcanvas-header">
-            <h4 class="offcanvas-title" id="offcanvaslabel" style="color: #ff006aa6;">HELP<hr></h4>        
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>                    
-        </div>
-        <div class="offcanvas-body">
-            <h5>TABELA DE FÓRMULAS DE PRIMITIVAÇÃO</h5>
-            <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col">Função</th>
-                    <th scope="col">Primitiva</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">$cf(x)$</th>
-                        <td>$cF(x)$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$f(x)+g(x)$</th>
-                        <td>$F(x)+G(x)$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$x^n (x \neq -1)$</th>
-                        <td>$\frac{x^{n+1}}{n+1}$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$\frac{1}{x}$</th>
-                        <td>$\ln{x}$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$e^x$</th>
-                        <td>$e^x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$cos \ x$</th>
-                        <td>$sen \ x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$sen \ x$</th>
-                        <td>$-cos \ x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$sec^2 x$</th>
-                        <td>$tg \ x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$sec \ x \ tg \ x$</th>
-                        <td>$sec \ x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$\frac{1}{\sqrt{1-x^2}}$</th>
-                        <td>$sen^{-1} \ x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$\frac{1}{1+x^2}$</th>
-                        <td>$tg^{-1} \ x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$cosh \ x$</th>
-                        <td>$senh \ x$</td>                    
-                    </tr>
-                    <tr>
-                        <th scope="row">$senh \ x$</th>
-                        <td>$cosh \ x$</td>                    
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+   <!--Floating Button-->
+   <div id="floatingbutton" style="background-color: #ff006aa6" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></div>
+   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvaslabel">
+       <div class="offcanvas-header">
+           <h4 class="offcanvas-title" id="offcanvaslabel" style="color: #ff006aa6;">HELP<hr></h4>        
+               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>                    
+       </div>
+       <div class="offcanvas-body">
+           <h5>TABELA DE FÓRMULAS DE PRIMITIVAÇÃO</h5>
+           <table class="table table-bordered">
+               <thead>
+                 <tr>
+                   <th scope="col">Função</th>
+                   <th scope="col">Primitiva</th>
+                 </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <th scope="row">$k$</th>
+                       <td>$kx$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$cf(x)$</th>
+                       <td>$cF(x)$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$f(x)+g(x)$</th>
+                       <td>$F(x)+G(x)$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$x^n (x \neq -1)$</th>
+                       <td>$\frac{x^{n+1}}{n+1}$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$\frac{1}{x}$</th>
+                       <td>$\ln{x}$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$e^x$</th>
+                       <td>$e^x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$cos \ x$</th>
+                       <td>$sen \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$sen \ x$</th>
+                       <td>$-cos \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$sec^2 x$</th>
+                       <td>$tg \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$sec \ x \ tg \ x$</th>
+                       <td>$sec \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$\frac{1}{\sqrt{1-x^2}}$</th>
+                       <td>$sen^{-1} \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$\frac{1}{1+x^2}$</th>
+                       <td>$tg^{-1} \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$cosh \ x$</th>
+                       <td>$senh \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$senh \ x$</th>
+                       <td>$cosh \ x$</td>                    
+                   </tr>
+               </tbody>
+           </table>
+           <hr>
+           <h5>Identidades Trigonométricas</h5>
+           <table class="table table-bordered">
+               <tbody>
+                   <tr>
+                       <td>$sen^{2} x + cos^{2} x = 1$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$tg^{2} x + 1 = sec^{2}x$</td>                    
+                   </tr>
+                   
+                   <tr>
+                       <td>$1 + cotg^{2}x = cosec^{2}x$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$sen^{2}x = \frac{1}{2}(1 - cos 2x)$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$cos^{2}x = \frac{1}{2}(1 + cos 2x)$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$cos 2x = cos^{2}x - sen^{2}x$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$sen 2x = 2 . senx . cosx$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$tg 2x = \frac{2 tg x}{1 - tg^2 x} $</td>                    
+                   </tr>
+                   <tr>
+                       <td>$senx . cosx = \frac{1}{2}sen 2x $</td>                    
+                   </tr>
+                   
+               </tbody>
+           </table>
+           <hr>
+           <h5>Funções Trigonométricas</h5>
+           <div class = "card border-info" style="margin-bottom: 20px;">
+               <div class="card-body"> 
+                   <p><b>Seno</b></p>
+                   <img src="resources/senx.png" style="width: 95%; ">    
+                   <p><b>Cosseno</b></p>
+                   <img src="resources/cosx.png" style="width: 95%;">  
+                   <p><b>Tangente</b> </p> 
+                   <img src="resources/tgx.png" style="width: 80%; ">    
+               </div>                
+           </div>
+           <h6>Relações Trigonométricas</h6>
+           <table class="table table-bordered">
+               <tbody>
+                   <tr>
+                       <td>$tan x = \frac{sen x}{cos x}$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$sec x = \frac{1}{cos x}$</td>                    
+                   </tr>
+                   
+                   <tr>
+                       <td>$csc x = \frac{1}{sen x}$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$cot x = \frac{cos x}{sen x}$</td>                    
+                   </tr>                   
+                   
+               </tbody>
+           </table>
+
+       </div>
+   </div>
 </body>
 </html>
