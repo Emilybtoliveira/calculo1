@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Áreas entre curvas</title>
+    <title>Volumes</title>
     <!--bootstrap-->
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -32,34 +32,40 @@
         </div>
     </nav>
     
-    <div id="titulo" style="background-color: #256949;">           
-        <h1>Áreas entre curvas</h1>
+    <div id="titulo" style="background-color: #946000;">           
+        <h1>Volumes</h1>
     </div>
     <div class="container">
         <div id="divs">
-            <h3>ÁREA</h3>
+            <h3>Volume</h3>
             <div class="card">
                 <div class="card-body">
-                   <p>A área A da região limitada pelas curvas $y=f(x)$, $y = g(x)$ e pelas retas $x = a$ e $x=b$, onde $f(x) \geqslant g(x)$
-                       para todo [a,b] é
+                   <p>Seja S um sólido que está entre $x = a$ e $x = b$, e A(x) a área da seção trasversal perpendicular ao eixo x,
+                    o volume de S é:
                    </p>                    
-                   $$A = \int_a^b [f(x) - g(x)] dx$$    
+                   $$V = \int_a^b A(x) dx$$   
+                   <p>Tal que A(x) é variável, obtida à medida que se percorre o sólido ao longo de x.</p> 
+                   <p><i>Em cilindros (circulares, retangulares, etc) a área é constante para todo o sólido.</i></p>
                 </div>  
-                <div class="card-img-bottom"><img src="resources/areacurvas.png" ></div>
+                <img src="resources/volume.png" >
             </div>
         </div>
 
         <div id="divs">
+            <h3>Sólidos de revolução</h3>
             <div id="divs">                
-                <div class="bd-callout" style="border-left-color: #94dcee;">
-                    <p>Quando $f(x) \geqslant g(x)$ para alguns valores de x, mas  $g(x) \geqslant f(x)$ para outros valores de x, 
-                        divide-se a regiao nas aréas onde f(x) é maior e onde g(x) é maior. A área total será a soma das áreas menores.
-                    </p>
-                    <img src="resources/subareascurvas.png">
+                <div class="bd-callout" style="border-left-color: #ff7be9;">
+                    <p>Sólidos obtidos pela rotação de uma região em torno de um eixo. Depedendo do eixo rotacionado, o volume é:</p>
+                    <p> $V = \int_a^b A(x) dx$   ou  $V = \int_a^b A(y) dy$</p>
+                   <ul>
+                       <li>Se a secção transversal for um circulo, o raio é em termos de x ou y, e a área igual a $A = \pi {(raio)}^2$</li>
+                       <li>Se a secção for um anel, deve-se encontrar o raio interno e o raio externo, e a área é
+                            $A = \pi {(raio externo)}^2 - \pi {(raio interno)}^2$</li>                        
+                   </ul>
+                   <img src="resources/solidorev.png" style="width: 65%;">
                 </div>
             </div>
         </div>
-
 
         <div id="divs">
             <h3>Resolvendo questões</h3>
@@ -67,28 +73,35 @@
                 <div class="bd-callout" style="border-left-color: #ff8c9f;">
                 <h4>MÉTODO</h4>
                 <ol>
-                    <li>Caso a questão não venha acompanhada por um gráfico, gera-se um com as funções dadas.</li>
+                    <li>Caso a questão não venha acompanhada por um gráfico, gera-se um com as informações dadas.</li>
                     <p>
                         <div class="d-grid gap-2 col-6 mx-auto">
                             <button class="btn btn-outline-danger" type="button"0><a href="https://www.geogebra.org/calculator" style="color:#DC3545;">Geogebra</a></button>
                             <button class="btn btn-outline-success" type="button"><a href="https://www.desmos.com/calculator?lang=pt-BR" style="color:#198754;">Desmos</a></button>
                         </div>
                     </p>
-                    <li>A partir do gráfico gerado, analisa-se qual função é maior.</li>
-                    <li>Em seguida, encontram-se os pontos de intersecção igualando as duas funções. Estes pontos serão o $a$ e $b$ da integração.</li>
-                    <li>Tendo esses dados, basta substituir na integral definida.</li>
+                    <li>A partir do gráfico gerado, deve-se visualizar o sólido formado pela rotação desse gráfico e o formato de sua secção trasversal.</li>
+                    <li>Caso a rotação seja em torno de x, a área e a integração serão em função de x. Caso contrário, em função de y (deve-se manipular a função dada nesse caso).</li>
+                    <li>Em seguida, calcula-se a área. De modo geral, dada por $A = base.h$</li>
+                    <li>Caso a questão determine os limites do sólido no gráfico, estes serão $a$ e $b$. Caso contrário, será um área entre curvas, e $a$ e $b$ são suas intersecções.</li>
+                    <li>Por fim, basta substituir os dados na integral definida.</li>
                 </ol>
+
                 <h4>Exemplos</h4>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <p class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
-                                <p>$y = x^2$ e $y = 2x - x^2$</p>
+                                <h6>EM FUNÇÃO DE X</h6>
                             </button>
                         </p>
                         <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                $$   $$
+                                <p><b>Encontrar volume do sólido obtido pela rotação em torno do eixo x da regiao sob a curva $y = \sqrt{x}$ de 0 a 1. </b></p>
+                                <img src="resources/solidodex.png" style="width: 60%;">
+                                <p>Como a rotação é em torno de x, pode se ver que a secção transversal é um circulo com raio igual a $\sqrt{x}$. Assim:</p>
+                                $$ A(x) = \pi{(\sqrt{x})}^2 = \pi x  $$
+                                $$V = \int_0^1 A(x) dx = \int_0^1 \pi x dx = \pi \frac{x^2}{2}]_0^1 = \frac{\pi}{2}$$
                             </div>
                         </div>
                     </div>
@@ -97,30 +110,22 @@
                     <div class="accordion-item">
                         <p class="accordion-header" id="headingTwo">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
-                               <p> $y = x -1 $ e $y^2 = 2x+6$</p>
+                               <h6> EM FUNÇÃO DE Y</h6>
                             </button>
                         </p>
                         <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                $$$$
+                                <p><b>Encontrar volume do sólido obtido pela rotação em torno da região delimitada por $y = x^3$, $y = 8$ e $x = 0$. </b></p>
+                                <img src="resources/solidodey.png" style="width: 60%;">
+                                <p>Como a rotação é em torno de y, o sólido é fatiado em relação a y. Logo, a secção transversal é um circulo de raio x. Porém, $y = x^3 \rightarrow x = \sqrt[3]{y})$. Assim:</p>
+                                $$ A(y) = \pi{x}^2 = \pi {(\sqrt[3]{y})}^2 = \pi {y}^{2/3} $$
+                                <p>Também os limites da integração serão em função de y. Portanto $a = 0$ e $b = 8$.</p>
+                                $$V = \int_0^8 A(y) dy = \int_0^8 \pi {y}^{2/3} dy = \pi \frac{3{y}^{5/3}}{5} = \frac{96\pi}{5} $$
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <p class="accordion-header" id="headingThree">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" id="bd-callout">
-                                SOMA
-                            </button>
-                        </p>
-                        <div id="collapseThree" class="accordion-collapse collapse hide" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 
