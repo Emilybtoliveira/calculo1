@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teorema Fundamental do Cálculo</title>
+    <title>Integrais Trigonométricas</title>
     <!--bootstrap-->
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -32,98 +32,172 @@
         </div>
     </nav>
     
-    <div id="titulo" style="background-color: #342569;">           
-        <h1>Teorema Fundamental do Cálculo</h1>
+    <div id="titulo" style="background-color: #3b4f86; ">           
+        <h1>Integrais Trigonométricas</h1>
     </div>
     <div class="container">
         <div id="divs">
-            <h3>Teorema</h3>
             <div class="card">
                 <div class="card-body">
-                    <p><b>Parte 1 </b> Para $f$ contínua em [a,b] :</p>                      
-                   
-                    $$g(x) = \int_a^x f(t) dt$$
-                    <p>Tal que g'(x) = f(x). Ou seja, a integral é uma primitiva de $f(x).$</p>
-                    <p><b>Parte 2 </b> Se F é uma primitiva de $f$, então em integrais definidas</p>
-                    $$g(x) = \int_a^b f(x) dx = F(b) - F(a)$$                     
-                   
+                    <p><b>Integrais Trigonométricas</b> envolvem, em geral, multiplicação de funções trigonométricas. Estas, em geral, elevadas a alguma potência.  
+                        Existem formas diferentes em que elas podem aparecer:
+                    </p>
+                   <p><b>Multiplicação $sen^m(x)cos^n(x)$</b></p>
+                    <ol>
+                        <li>Se pelo menos uma das potências for <b>ímpar:</b></li>
+                        <ul>
+                            <li>Utiliza-se $sen^2(x) + cos^2(x) = 1$</li>
+                            <li>Substituição de $u = sen(x)$ ou $u = cos(x)$</li>
+                        </ul>
+                        <li>Se as duas potências forem <b>pares:</b></li>
+                        <ul>
+                            <li>$sen^2(x) = \frac{1}{2}(1-cos(2x))$</li>
+                            <li>ou $cos^2(x) =\frac{1}{2}(1+cos(2x))$</li>
+                        </ul>
+                    </ol>
+
+                    <p><b>Multiplicação $tg^m(x)sec^n(x)$</b></p>
+                    <ol>
+                        <li>Se a potência a secante for <b>par:</b></li>
+                        <ul>
+                            <li>Utiliza-se $sec^2(x) = 1+ tg^2(x) $</li>
+                            <li>Substituição de $u = tg(x)$ e $du = sec^2(x)dx$</li>
+                        </ul>
+                        <li>Se a potência da tangente for <b>impar:</b></li>
+                        <ul>
+                            <li>Utiliza-se $tg^2(x) = sec^2(x)-1$</li>
+                            <li>Substituição de $u = sec(x)$ e $du = sec(x)tg(x)dx$</li>
+                        </ul>
+                    </ol>
                 </div>  
             </div>
-        </div>
+        </div>         
 
         <div id="divs">
-            <div id="divs">                
-                <div class="bd-callout" style="border-left-color: #ac94ee;">
-                    <p>
-                        Uma integral definida $\int_a^x f(x) dx$ é um número, enquanto uma integral indefinida $\int f(x) dx$ é uma função 
-                    </p>
+            <h3>Resolvendo questões</h3>
+            <div id="divs">             
+                <div class="bd-callout" style="border-left-color: #000000;">              
+                    <h4>Exemplos</h4>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <p class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
+                                    $\int sen^6(x) cos^3(x) dx$
+                                </button>
+                            </p>
+                            <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    $$\int sen^6(x) cos^3(x) dx = \int sen^6(x) cos^2(x) cos(x) dx$$ 
+                                    $$\int sen^6(x) (1 - sen^2(x)) cos(x) dx$$ 
+                                    <p>Teremos $u = senx$ e $du = cosx dx$. Logo,</p>
+                                    $$\int u^6.(1-u^2) du = \int u^6 - u^8 du = \frac{u^7}{7} - \frac{u^9}{9} +C$$
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <p class="accordion-header" id="headingTwo">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
+                                    $\int (tg^2 (x)- tg^4(x)) dx$
+                                </button>
+                            </p>
+                            <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-
-        <div id="divs">
-            <h3>Resolvendo questões básicas</h3>
-            <div id="divs">                
-                <div class="bd-callout" style="border-left-color: #94eec4;">
-                <p>Não existe método, basta olhar a tabela de primitivas.</p>
+        <div id="divs">                
+            <div class="bd-callout" style="border-left-color: #6d2d31;">
+                <h3>Substituição Trigonométrica</h3>
+                <p>Para resolver integrais contendo funções como: </p>
+                $$\sqrt{x^2-a^2}, \sqrt{x^2+a^2}, \sqrt{a^2-x^2}$$
+                <p><i>Tal que $a$ é uma constante.</i> Ela sempre virá já elevada ao quadrado, assim, deve-se reescreve-la em sua forma de raiz elevada ao quadrado.
+                Ex: $\sqrt{x^2-9} = \sqrt{x^2-3^2}$</p>
+                <p>Assim, para resolver integrais nesse formato, deve-se substituir o fator x por uma expressão trigonométrica. Eis as substituições possíveis:</p>
                 <ol>
-                    <li>Se for definida, calcula-se $F(b) - F(a)$</li>
-                    <li>Se for indefinida, acrescenta a constante no final.</li>
+                    <li>$\sqrt{x^2+a^2} \rightarrow x = a.tg\theta$</li>
+                    <li>$\sqrt{x^2-a^2} \rightarrow x = a.sec\theta$</li>
+                    <li>$\sqrt{a^2-x^2} \rightarrow x = a.sen\theta$</li>
                 </ol>
-                <h4>Exemplos</h4>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <p class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
-                                $\int_3^6 \frac{dx}{x}$
-                            </button>
-                        </p>
-                        <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                $$\int_3^6 \frac{dx}{x} = \int_3^6 \frac{1}{x} dx$$                
-                                $$\int_3^6 \frac{1}{x} dx = ln x]_3^6 $$
-                                $$ ln (6) - ln (3) = ln (2)$$
+                <i>Resumindo, o uso da substituição trigonométrica é para eliminar a raiz.</i>
+                <p>Feito isso, e resolvida a integral em função de $\theta$, é preciso converter a resposta de volta para a variável original. 
+                    Para isso termoas a seguinte tabela:</p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Expressão</th>
+                            <th scope="col">Substituição</th>
+                            <th scope="col">Identidade</th>
+                            <th scope="col">Pitágoras</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$\sqrt{x^2+a^2}$</td>
+                            <td>$x = a.tg\theta$</td>
+                            <td>$tg^2\theta = sec^2\theta - 1$</td>
+                            <td><img src="resources/subs1.png" style = "width: 40%;"></td>
+                        </tr>
+                        <tr>
+                            <td>$\sqrt{x^2-a^2}$</td>
+                            <td>$x = a.sec\theta$</td>
+                            <td>$sec^2\theta = tg^2\theta + 1$</td>
+                            <td><img src="resources/subs2.png" style = "width: 50%;"></td>
+                        </tr>
+                        <tr>
+                            <td>$\sqrt{a^2-x^2}$</td>
+                            <td>$x = a.sen\theta$</td>
+                            <td>$sen^2\theta = 1 - cos^2\theta$</td>
+                            <td><img src="resources/subs3.png" style = "width: 40%;"></td>
+                        </tr>
+                    </tbody>
+                </table> 
+                <p>Sabendo essas informações, basta substituir no triangulo retangulo com os respectivos dados da questão e manipular as funções trigonométricas presentes
+                    de acordo com as relações do triângulo retângulo. <i>obs: todas elas estão no help.</i>
+                </p>   
+            </div>
+            <div id="divs">
+                <h3>Resolvendo questões</h3>
+                <div id="divs">             
+                    <div class="bd-callout" style="border-left-color: #4a9499;"> 
+                        <h5>Método</h5>  
+                            <ol>
+                                <li>Identificar qual o caso da raiz e substituir o a.</li>
+                                <li>Determinar x e dx.</li>
+                                <li>Substituir a, x, e dx na função e desenvolver utilizando a identidade trigonométrica correspondente.</li>
+                                <li>Resolver a integral na variável $\theta$.</li>
+                                <li>Usar as relações do triângulo retangulo para converter $\theta$ na variável original.</li>
+                            </ol>     
+                        <h5>Exemplos</h5>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <p class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
+                                        $$
+                                    </button>
+                                </p>
+                                <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        
+    
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <p class="accordion-header" id="headingTwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
-                                $\int_1^3 e^x dx $
-                            </button>
-                        </p>
-                        <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                $$ \int_1^3 e^x dx = e^x]_1^3  $$                   
-                                $$ F(3) - F(1) = e^3 - e$$
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <p class="accordion-header" id="headingThree">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" id="bd-callout">
-                                $\int_1^9 \frac{2t^2 + t^2 \sqrt{t} - 1}{t^2}$
-                            </button>
-                        </p>
-                        <div id="collapseThree" class="accordion-collapse collapse hide" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                $$ \int_1^9 \frac{2t^2 + t^2 \sqrt{t} - 1}{t^2} dt= \int_1^9 2 + t^{1/2} - t^{-2} dt  $$                   
-                                $$ = 2t + \frac{t^{3/2}}{3/2} - \frac{t^{-1}}{-1}]_1^9$$
-                                $$ = (2*9 + \frac{2}{3} * 9^{3/2} + \frac{1}{9}) - (2*1 + \frac{2}{3} * 1^{3/2} + \frac{1}{1}) $$
-                                $$ = 18 + 18 + \frac{1}{9} - 2 - \frac{2}{3} - 1 = 32\frac{4}{9} $$
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
+
         </div>
-
-
     </div>
 
 

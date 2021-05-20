@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teorema Fundamental do Cálculo</title>
+    <title>Integração por partes</title>
     <!--bootstrap-->
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -32,58 +32,82 @@
         </div>
     </nav>
     
-    <div id="titulo" style="background-color: #342569;">           
-        <h1>Teorema Fundamental do Cálculo</h1>
+    <div id="titulo" style="background-color: #961919; ">           
+        <h1>Integração por partes</h1>
     </div>
     <div class="container">
         <div id="divs">
             <h3>Teorema</h3>
             <div class="card">
                 <div class="card-body">
-                    <p><b>Parte 1 </b> Para $f$ contínua em [a,b] :</p>                      
-                   
-                    $$g(x) = \int_a^x f(t) dt$$
-                    <p>Tal que g'(x) = f(x). Ou seja, a integral é uma primitiva de $f(x).$</p>
-                    <p><b>Parte 2 </b> Se F é uma primitiva de $f$, então em integrais definidas</p>
-                    $$g(x) = \int_a^b f(x) dx = F(b) - F(a)$$                     
-                   
+                    <p>Técnica para integrar um produto de funções diferentes. Corresponde ao inverso da regra do produto.</p>
+                    <p>Utilizamos integração por partes de modo que uma das funções é mais fácil de <b>derivar</b> e a outra de <b>integrar</b></p>
+                        $$\int u dv = uv - \int v du$$
+                    <i>Sendo assim, o $u$ é sempre a função que é mais fácil derivar. Sobrando a segunda função $dv$, que deve ser a mais fácil de integrar.</i>
+                </div>  
+            </div>
+        </div>  
+
+        <div id="divs">                
+            <div class="bd-callout" style="border-left-color: #ff7b00;">
+                <h5>MACETE PARA ESCOLHER $u$ E $dv$</h5>
+                <p>Determina-se u a partir da seguinte ordem de preferência:</p>
+                <ol>
+                    <li>Função <b>Logaritmica</b></li>
+                    <li>Função <b>Inversa (arcsen x, arctg x)</b></li>
+                    <li>Função <b>Algébrica</b></li>
+                    <li>Função <b>Trigonométrica</b></li>
+                    <li>Função <b>Exponencial</b></li>
+                </ol>
+                <p>E assim, a segunda função torna-se $dv$.</p>
+                <p>Se você tiver $\int e^x 2x dx$, $2x$ seria nosso $u$, e $e^x$ nosso $dv$, pois uma função algébrica é mais fácil de ser derivada.</p>
+            </div>
+        </div>
+        <div id="divs">
+            <h3>Em integrais definidas</h3>
+            <div class="card border-danger">
+                <div class="card-body">
+                    <p>Em integrais definidas, a fórmula é:</p>
+                        $$\int_b^a u dv = uv]_b^a - \int_b^a v du$$
                 </div>  
             </div>
         </div>
 
         <div id="divs">
+            <h3>Resolvendo questões</h3>
             <div id="divs">                
-                <div class="bd-callout" style="border-left-color: #ac94ee;">
-                    <p>
-                        Uma integral definida $\int_a^x f(x) dx$ é um número, enquanto uma integral indefinida $\int f(x) dx$ é uma função 
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="divs">
-            <h3>Resolvendo questões básicas</h3>
-            <div id="divs">                
-                <div class="bd-callout" style="border-left-color: #94eec4;">
-                <p>Não existe método, basta olhar a tabela de primitivas.</p>
+                <div class="bd-callout" style="border-left-color: #4d6900;">
+                <h4>MÉTODO</h4>                
                 <ol>
-                    <li>Se for definida, calcula-se $F(b) - F(a)$</li>
-                    <li>Se for indefinida, acrescenta a constante no final.</li>
+                    <li>Determina-se segundo a ordem $u$ e $dv$.</li>
+                    <li>Calcula-se, a partir disso, $v$ e $du$.</li>
+                    <li>Por fim, substitui tudo na fórmula e desenvolve.</li>
+                    <li>Caso a expressão dentro da integral ainda seja complicada de integrar pode-se:</li>
+                    <ol>
+                        <li>Utilizar novamente a integração por partes.</li>
+                        <li>Utilizar a regra da substituição.</li>
+                    </ol>
+                    <li>E repetir o processo até que se obtenha uma expressão dentro da integral facilmente integrável.</li>
                 </ol>
                 <h4>Exemplos</h4>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <p class="accordion-header" id="headingOne">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
-                                $\int_3^6 \frac{dx}{x}$
+                                $\int x cos (5x) dx$
                             </button>
                         </p>
                         <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                $$\int_3^6 \frac{dx}{x} = \int_3^6 \frac{1}{x} dx$$                
-                                $$\int_3^6 \frac{1}{x} dx = ln x]_3^6 $$
-                                $$ ln (6) - ln (3) = ln (2)$$
+                                <p>Tomaremos $u = x$ e $dv = cos (5x) dx$ Logo,</p>
+                                <p>$du = 1dx$ e $v = \int cos (5x) dx \rightarrow u = 5x | du = 5dx \rightarrow v = \frac{1}{5} \int cos (u) du =  \frac{1}{5} sen (5x) $</p>
+                                <p>Substituindo tudo na fórmula:</p>
+                                I) $$\int x cos (5x) dx = [x. \frac{sen(5x)}{5}] - [\int  \frac{1}{5} sen(5x)dx]$$
+                                <p>Utilizando a regra da substituição para resolver a integral:</p>
+                                $\int  \frac{1}{5} sen(5x)dx \rightarrow t = 5x | dt = 5dx \rightarrow v = \frac{1}{5}\frac{1}{5} \int sen (t) dt =  - \frac{1}{25} cos (5x) + C $
+                                <p>Voltando pra expressão I:</p>
+                                $$\int x cos (5x) dx = [x. \frac{sen(5x)}{5}] - [- \frac{1}{25} cos (5x) + C]$$
+                                $$ = \frac{x.sen(5x)}{5} + \frac{cos (5x)}{25} + C$$
                             </div>
                         </div>
                     </div>
@@ -92,35 +116,28 @@
                     <div class="accordion-item">
                         <p class="accordion-header" id="headingTwo">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
-                                $\int_1^3 e^x dx $
+                                $\int (x^2+2x) cosx dx$
                             </button>
                         </p>
                         <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                $$ \int_1^3 e^x dx = e^x]_1^3  $$                   
-                                $$ F(3) - F(1) = e^3 - e$$
+                                <p>Tomaremos $u = x^2+2x$ e $dv = cos (x) dx$ Logo,</p>
+                                <p>$du = 2x+2 dx$ e $v = sen (x)$</p>
+                                <p>Substituindo tudo na fórmula:</p>
+                                 I) $$\int (x^2+2x) cosx dx = (x^2+2x)sen(x) - \int senx (2x+2) dx*$$
+                                <p>Utilizaremos novamente a integração por partes para resolver a integral no asterisco:</p>
+                                $$*2 \int senx (x+1) dx$$
+                                <p>Tomaremos $u = x+1$ e $dv = sen(x) dx$. Logo, $du = dx$ e $v = -cos(x)$. Substituindo na fórmula da intergação por partes:</p>
+                                $$\int senx (x+1) dx = -(x+1)cosx - \int -cos(x)dx = -cosx(x+1) + senx + C$$
+                                <p>Voltando pra expressão I, substituiremos o resultado da integral*:</p>
+                                $$\int (x^2+2x) cosx dx = (x^2+2x)sen(x) - 2[ -cosx(x+1) + senx + C]$$
+                                $$ =senx(x^2+2x)+2cosx(x+1)-2senx+C$$
+                                $$ = senx(x^2+2x-2) + 2(x+1)cosx + C$$
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <p class="accordion-header" id="headingThree">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" id="bd-callout">
-                                $\int_1^9 \frac{2t^2 + t^2 \sqrt{t} - 1}{t^2}$
-                            </button>
-                        </p>
-                        <div id="collapseThree" class="accordion-collapse collapse hide" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                $$ \int_1^9 \frac{2t^2 + t^2 \sqrt{t} - 1}{t^2} dt= \int_1^9 2 + t^{1/2} - t^{-2} dt  $$                   
-                                $$ = 2t + \frac{t^{3/2}}{3/2} - \frac{t^{-1}}{-1}]_1^9$$
-                                $$ = (2*9 + \frac{2}{3} * 9^{3/2} + \frac{1}{9}) - (2*1 + \frac{2}{3} * 1^{3/2} + \frac{1}{1}) $$
-                                $$ = 18 + 18 + \frac{1}{9} - 2 - \frac{2}{3} - 1 = 32\frac{4}{9} $$
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
         </div>
 
 
