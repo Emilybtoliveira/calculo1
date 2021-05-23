@@ -57,6 +57,7 @@
                     </ol>
 
                     <p><b>Multiplicação $tg^m(x)sec^n(x)$</b></p>
+                    <i>A ideia é sempre eliminar a tangente.</i>
                     <ol>
                         <li>Se a potência a secante for <b>par:</b></li>
                         <ul>
@@ -68,6 +69,17 @@
                             <li>Utiliza-se $tg^2(x) = sec^2(x)-1$</li>
                             <li>Substituição de $u = sec(x)$ e $du = sec(x)tg(x)dx$</li>
                         </ul>
+                    </ol>
+
+                    <p><b>Multiplicação $cotg^m(x)cossec^n(x)$</b></p>
+                    <ol>
+                        <ul>
+                            <li>Utiliza-se $cossec^2(x) = 1+ cotg^2(x) $</li>
+                            <li>Substituição de $u = cotg(x)$ ou $u = cossec(x)dx$</li>
+
+                            <li>$du(cotg(x)) = -cossec(x)$ e $du(cossec(x)) = −cosec \ x \ cotg \ x$</li>
+                        </ul>
+                        
                     </ol>
                 </div>  
             </div>
@@ -100,12 +112,14 @@
                         <div class="accordion-item">
                             <p class="accordion-header" id="headingTwo">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
-                                    $\int (tg^2 (x)- tg^4(x)) dx$
+                                    $\int tg^2 (\theta) sec^4(\theta) \ d\theta$
                                 </button>
                             </p>
                             <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    
+                                    $$\int tg^2 (\theta) sec^4(\theta) \ d\theta = \int tg^2\theta \ (tg^2\theta +1) sec^2\theta \ d\theta $$
+                                   <p>Tomando $u = tg\theta$, $du = sec^2\theta \ d\theta$, temos:</p>                                   
+                                    $$\int u^2(u^2+1)du = \int u^4+u^2 du = \frac{u^5}{5} + \frac{u^3}{3}+C = \frac{tg^5\theta}{5} + \frac{tg^3\theta}{3}+C $$
                                 </div>
                             </div>
                         </div>
@@ -128,41 +142,61 @@
                     <li>$\sqrt{a^2-x^2} \rightarrow x = a.sen\theta$</li>
                 </ol>
                 <i>Resumindo, o uso da substituição trigonométrica é para eliminar a raiz.</i>
-                <p>Feito isso, e resolvida a integral em função de $\theta$, é preciso converter a resposta de volta para a variável original. 
-                    Para isso termoas a seguinte tabela:</p>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Expressão</th>
-                            <th scope="col">Substituição</th>
-                            <th scope="col">Identidade</th>
-                            <th scope="col">Pitágoras</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>$\sqrt{x^2+a^2}$</td>
-                            <td>$x = a.tg\theta$</td>
-                            <td>$tg^2\theta = sec^2\theta - 1$</td>
-                            <td><img src="resources/subs1.png" style = "width: 40%;"></td>
-                        </tr>
-                        <tr>
-                            <td>$\sqrt{x^2-a^2}$</td>
-                            <td>$x = a.sec\theta$</td>
-                            <td>$sec^2\theta = tg^2\theta + 1$</td>
-                            <td><img src="resources/subs2.png" style = "width: 50%;"></td>
-                        </tr>
-                        <tr>
-                            <td>$\sqrt{a^2-x^2}$</td>
-                            <td>$x = a.sen\theta$</td>
-                            <td>$sen^2\theta = 1 - cos^2\theta$</td>
-                            <td><img src="resources/subs3.png" style = "width: 40%;"></td>
-                        </tr>
-                    </tbody>
-                </table> 
-                <p>Sabendo essas informações, basta substituir no triangulo retangulo com os respectivos dados da questão e manipular as funções trigonométricas presentes
-                    de acordo com as relações do triângulo retângulo. <i>obs: todas elas estão no help.</i>
-                </p>   
+                <div class="card border-dark" id="divs">
+                    <div class="card-body">
+                        <h5 >EM INTEGRAL INDEFINIDA</h5>
+                        <p>Feito isso, e resolvida a integral em função de $\theta$, é preciso converter a resposta de volta para a variável original. 
+                            Para isso temos a seguinte tabela:</p>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Expressão</th>
+                                    <th scope="col">Substituição</th>
+                                    <th scope="col">Identidade</th>
+                                    <th scope="col">Pitágoras</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>$\sqrt{x^2+a^2}$</td>
+                                    <td>$x = a.tg\theta$</td>
+                                    <td>$tg^2\theta = sec^2\theta - 1$</td>
+                                    <td><img src="resources/subs1.png" style = "width: 40%;"></td>
+                                </tr>
+                                <tr>
+                                    <td>$\sqrt{x^2-a^2}$</td>
+                                    <td>$x = a.sec\theta$</td>
+                                    <td>$sec^2\theta = tg^2\theta + 1$</td>
+                                    <td><img src="resources/subs2.png" style = "width: 50%;"></td>
+                                </tr>
+                                <tr>
+                                    <td>$\sqrt{a^2-x^2}$</td>
+                                    <td>$x = a.sen\theta$</td>
+                                    <td>$sen^2\theta = 1 - cos^2\theta$</td>
+                                    <td><img src="resources/subs3.png" style = "width: 40%;"></td>
+                                </tr>
+                            </tbody>
+                        </table> 
+                        <p>Sabendo essas informações, basta substituir no triangulo retangulo com os respectivos dados da questão e manipular as funções trigonométricas presentes
+                            de acordo com as relações do triângulo retângulo. <i>obs: todas elas estão no help.</i>
+                        </p> 
+                    </div>
+                </div>
+                <div class="card border-secondary" id="divs">
+                    <div class="card-body">
+                        <h5 id = "divs">EM INTEGRAL DEFINIDA</h5>
+                        <p>Em integrais definidas é preciso, antes de iniciar a integração, modificar os limites da integral(o intervalo). Assim, logo quando é feita a identificação do $x$, 
+                            substitui-se seu valor pelos limites originais da integração, e encontra-se o valor de $\theta$. Por exemplo:
+                            $$\int_0^1 \frac{x^3}{\sqrt{1-x^2}} \rightarrow x = 1sen\theta \rightarrow 1 = 1sen\theta \rightarrow \theta = \frac{\pi}{2}$$
+                           <p>O mesmo para o 0:</p>
+                           $$\int_0^1 \frac{x^3}{\sqrt{1-x^2}} \rightarrow x = 1sen\theta \rightarrow 0 = 1sen\theta \rightarrow \theta = 0$$
+                            <i>Caso haja mais de um valor para $\theta$, basta lembrar da seguinte tabela:</i>
+                            <img src="resources/intervalossubs.png">
+                        </p>
+                    </div>
+                </div>
+                
+
             </div>
             <div id="divs">
                 <h3>Resolvendo questões</h3>
@@ -181,13 +215,35 @@
                             <div class="accordion-item">
                                 <p class="accordion-header" id="headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
-                                        $$
+                                        <h6>DEFINIDA</h6>
                                     </button>
                                 </p>
                                 <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
+                                        $$\int_0^3 \frac{x}{\sqrt{36-x^2}} \ dx $$
+                                        <p>Podemos realizar a seguinte substituicao:</p>
+                                        $$\sqrt{a^2 - x^2} =  \sqrt{36 - (6sen\theta)^2} = \sqrt{36 - 36 sen^2\theta)} = \sqrt{36(1 - sen^2\theta)} = \\ \sqrt{36 cos^2\theta} = 6cos\theta$$
+                                        <p>Daí, devemos calcular a derivada de x para em função de $\theta$:</p>
+                                        $$x = 6sen\theta \rightarrow dx = 6 cos\theta \ d\theta$$
+                                        <p>Além disso, devemos mudar os limites da integração para em função de $\theta$. Para $x = 3$ e $x = 0$:</p>
+                                        $$ 0 = 6 sen\theta \rightarrow sen\theta = 0 \rightarrow \theta = 0$$
+                                        $$3 = 6 sen\theta \rightarrow sen\theta = \frac{1}{2} \rightarrow \theta = \frac{\pi}{6}$$
+                                        <p>Por fim, voltando à integração:</p>
+                                        $$\int_0^3 \frac{x}{\sqrt{36-x^2}} \ dx = \int_0^{\pi/6} \frac{6 sen\theta}{6cos\theta}. 6cos\theta \ d\theta
+                                        \\ = \int_0^{\pi/6} 6 sen\theta \ d\theta = -6 cos\theta]_0^{\pi/6}
+                                        \\-6 cos({\pi/6}) + 6 cos(0) = -3\sqrt{3}+6$$
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <p class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
+                                        <h6>INDEFINIDA</h6>
+                                    </button>
+                                </p>
+                                <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
                                         
-    
                                     </div>
                                 </div>
                             </div>
@@ -257,6 +313,14 @@
                     <tr>
                         <th scope="row">$sec \ x \ tg \ x$</th>
                         <td>$sec \ x$</td>                    
+                    </tr>
+                    <tr>
+                        <th scope="row">$-cosec^2 \ x $</th>
+                        <td>$cotg \ x$</td>                    
+                    </tr>
+                    <tr>
+                        <th scope="row">$- cosec \ x \ cotg \ x$</th>
+                        <td>$cosec \ x$</td>                    
                     </tr>
                     <tr>
                         <th scope="row">$\frac{1}{\sqrt{1-x^2}}$</th>
