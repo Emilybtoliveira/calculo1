@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrais Impróprias</title>
+    <!--bootstrap-->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">    </head>
+    <!--MathJax-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ extensions: ["tex2jax.js"], jax: ["input/TeX", "output/HTML-CSS"], tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], displayMath: [ ['$$','$$'], ["\\[","\\]"] ], processEscapes: true }, "HTML-CSS": { availableFonts: ["TeX"] } });
+    </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                <a class="navbar-brand" onclick="window.location.href='calculo1.html';">Página Inicial</a>
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Inicio</a></li>     
+            </ul>  
+        </div>
+    </nav>
+    
+    <div id="titulo" style="background-color:red;">           
+        <h1>Integrais Impróprias</h1>
+    </div>
+    <div class="container">
+        <div id="divs">
+            <h3>CONCEITO</h3>
+            <div class="card">
+                <div class="card-body">
+                   <p>Integral imprópria ocorre quando o intervalo vai para o infinito ou quando existe uma descontinuidade no intervalo.
+
+                    Para notar facilmente, é só fazer a substituição de um dos valores do intervalo na integral, o que deverá resultar em infinito.
+                    
+                    Para resolver, é necessário aplicar o limite ao resultado da integral.
+                   </p>                    
+                   $$\int_1^\infty [f(x)] dx$$    
+                </div>  
+                
+            </div>
+        </div>
+
+        <div id="divs">
+            <div id="divs">                
+                <div class="bd-callout" style="border-left-color: red;">
+                    <p><center><b>Se o resultado do limite for um número, a integral é CONVERGENTE, se for infinito, a integral é DIVERGENTE.</b></center><br>
+
+                        Para se calcular uma integral imprópria em uma descontinuidade num intervalo [-∞,+∞], é necessário separar em duas integrais com intervalos [-∞,a], [a,+∞].
+                        Se um dos resultados der infinito, ja pode considerar divergente.
+                                               
+                    </p>
+                    $$\int_{-\infty}^\infty [f(x)] dx$$   
+
+                    $$\int_{-\infty}^\infty [f(x)] dx = \int_{-\infty}^a [f(x)] dx + \int_a^\infty [f(x)] dx $$
+                    <p>
+                        Para se calcular uma integral imprópria em uma descontinuidade num intervalo [a,b], é necessário separar em duas integrais com intervalos [a,c], [c,b].
+                         Dado que a continuidade estará em a < c < b. Se um dos resultados der infinito, ja pode considerar divergente.
+                    </p>
+                   
+                    
+                    $$\int_a^b [f(x)] dx$$   
+
+                    $$\int_a^c [f(x)] dx = \int_a^c [f(x)] dx + \int_c^b [f(x)] dx $$
+                </div>
+            </div>
+        </div>
+
+
+        <div id="divs">
+            <h3>Resolvendo questões</h3>
+            <div id="divs">                
+                <div class="bd-callout" style="border-left-color:red;">
+                <h4>MÉTODO</h4>
+                <ol>
+                    <img src="resources/definicaoimp.png">
+                    <li>
+                        Resolve a integral normalmente.
+                    </li>
+                    <li>
+                        No final, faz a TFC com a nova variavel (T).
+                    </li>
+                    <li>
+                        Aplica o limite aquele resultado.
+                    </li>
+                </ol>
+                <h4>Exemplos</h4>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="bd-callout">
+                                <p>$\int_1^\infty [\frac 1x] dx$</p>
+                            </button>
+                        </p>
+                        <div id="collapseOne" class="accordion-collapse collapse hide" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                $$\int_1^\infty [\frac 1x] dx$$   
+
+                                $$\lim_{T \to \infty}  \int_1^T [\frac 1x]dx$$
+
+                                $$\lim_{T \to \infty} ln|x| ]_1^T$$
+
+                                $$\lim_{T \to \infty} (ln T - ln 1) = \lim_{T \to \infty} lnT = ln\infty = \infty$$
+
+                                <center> <b>Portanto, a integral diverge.</b></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <p class="accordion-header" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="bd-callout">
+                               <p> $\int_2^5 [\frac{1}{\sqrt{x-2}}] dx$</p>
+                            </button>
+                        </p>
+                        <div id="collapseTwo" class="accordion-collapse collapse hide" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <center> Observe que a integral é imprórpia pois tem a assintota vertical x=2, zerando o denominador.</center>   
+                                $$\int_2^5 [\frac{1}{\sqrt {x-2}}] dx$$   
+
+                                $$\lim_{T \to 2}  \int_T^5 [\frac{1}{\sqrt {x-2}}]$$
+
+                                $$\lim_{T \to 2} 2\sqrt{x-2} ]_T^5$$
+
+                                $$ = 2\sqrt 3 - 2\sqrt{T-2} $$
+
+                                $$\lim_{T \to 2} 2\sqrt 3 - 2\sqrt{T-2} = \lim_{T \to 2} 2\sqrt 3 - 2\sqrt{2-2}$$
+
+                                $$ = 2\sqrt 3 $$
+
+                                <center><b>Logo, ela é convergente</b></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+
+    </div>
+
+
+   <!--Floating Button-->
+   <div id="floatingbutton" style="background-color: #ff006aa6" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"></div>
+   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvaslabel">
+       <div class="offcanvas-header">
+           <h4 class="offcanvas-title" id="offcanvaslabel" style="color: #ff006aa6;">HELP<hr></h4>        
+               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>                    
+       </div>
+       <div class="offcanvas-body">
+           <h5>TABELA DE FÓRMULAS DE PRIMITIVAÇÃO</h5>
+           <table class="table table-bordered">
+               <thead>
+                 <tr>
+                   <th scope="col">Função</th>
+                   <th scope="col">Primitiva</th>
+                 </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <th scope="row">$k$</th>
+                       <td>$kx$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$cf(x)$</th>
+                       <td>$cF(x)$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$f(x)+g(x)$</th>
+                       <td>$F(x)+G(x)$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$x^n (x \neq -1)$</th>
+                       <td>$\frac{x^{n+1}}{n+1}$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$\frac{1}{x}$</th>
+                       <td>$\ln{x}$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$e^x$</th>
+                       <td>$e^x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$cos \ x$</th>
+                       <td>$sen \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$sen \ x$</th>
+                       <td>$-cos \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$sec^2 x$</th>
+                       <td>$tg \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$sec \ x \ tg \ x$</th>
+                       <td>$sec \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$-cosec^2 \ x $</th>
+                       <td>$cotg \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$- cosec \ x \ cotg \ x$</th>
+                       <td>$cosec \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$\frac{1}{\sqrt{1-x^2}}$</th>
+                       <td>$sen^{-1} \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$\frac{1}{1+x^2}$</th>
+                       <td>$tg^{-1} \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$cosh \ x$</th>
+                       <td>$senh \ x$</td>                    
+                   </tr>
+                   <tr>
+                       <th scope="row">$senh \ x$</th>
+                       <td>$cosh \ x$</td>                    
+                   </tr>
+               </tbody>
+           </table>
+           <hr>
+           <h5>Identidades Trigonométricas</h5>
+           <table class="table table-bordered">
+               <tbody>
+                   <tr>
+                       <td>$sen^{2} x + cos^{2} x = 1$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$tg^{2} x + 1 = sec^{2}x$</td>                    
+                   </tr>
+                   
+                   <tr>
+                       <td>$1 + cotg^{2}x = cosec^{2}x$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$sen^{2}x = \frac{1}{2}(1 - cos 2x)$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$cos^{2}x = \frac{1}{2}(1 + cos 2x)$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$cos 2x = cos^{2}x - sen^{2}x$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$sen 2x = 2 . senx . cosx$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$tg 2x = \frac{2 tg x}{1 - tg^2 x} $</td>                    
+                   </tr>
+                   <tr>
+                       <td>$senx . cosx = \frac{1}{2}sen 2x $</td>                    
+                   </tr>
+                   
+               </tbody>
+           </table>
+           <hr>
+           <h5>Funções Trigonométricas</h5>
+           <div class = "card border-info" style="margin-bottom: 20px;">
+               <div class="card-body"> 
+                   <p><b>Seno</b></p>
+                   <img src="resources/senx.png" style="width: 95%; ">    
+                   <p><b>Cosseno</b></p>
+                   <img src="resources/cosx.png" style="width: 95%;">  
+                   <p><b>Tangente</b> </p> 
+                   <img src="resources/tgx.png" style="width: 80%; ">    
+               </div>                
+           </div>
+           <h6>Relações Trigonométricas</h6>
+           <table class="table table-bordered">
+               <tbody>
+                   <tr>
+                       <td>$tan x = \frac{sen x}{cos x}$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$sec x = \frac{1}{cos x}$</td>                    
+                   </tr>
+                   
+                   <tr>
+                       <td>$csc x = \frac{1}{sen x}$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$cot x = \frac{cos x}{sen x}$</td>                    
+                   </tr>
+               </tbody>
+           </table>
+           <h6>Relações no triângulo retângulo</h6>
+           <table class="table table-bordered">
+               <tbody>
+                   <tr>
+                       <td>$sen x = \frac{CO}{h}$</td>                    
+                   </tr>
+                   <tr>
+                       <td>$cos x = \frac{CA}{h}$</td>                    
+                   </tr>
+                   
+                   <tr>
+                       <td>$tg x = \frac{CO}{CA}$</td>                    
+                   </tr>                    
+               </tbody>
+           </table>
+       </div>
+   </div>
+    
+</body>
+</html>
